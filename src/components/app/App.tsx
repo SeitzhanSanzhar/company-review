@@ -1,24 +1,22 @@
 import React from 'react';
 import logo from '../../images/logo.svg';
 import './App.css';
+import Login from "../login/Login";
+import HeaderLogged from "../header_logged/HeaderLogged";
+import {
+  Switch,
+  useLocation,
+  Route
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeaderLogged/>
+      <Switch>
+        <Route exact path='/' component={Login}/>
+        <Route path='/login' component={Login}/>
+      </Switch>
     </div>
   );
 }
