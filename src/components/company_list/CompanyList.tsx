@@ -1,10 +1,11 @@
 import React from 'react';
-import CompanyListItem from "../company_list_item/CompanyListItem";
-import './CompanyList.css';
 import CardDeck from "react-bootstrap/CardDeck";
-import {CompanyData} from "../../models/CompanyData";
-import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
+
+import { CompanyData } from "../../models/CompanyData";
+import CompanyListItem from "../company_list_item/CompanyListItem";
+
+import './CompanyList.css';
 
 interface IProps {}
 type IState = {
