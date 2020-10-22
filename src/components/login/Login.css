@@ -1,6 +1,13 @@
 .login-form {
-    width: 30%;
     height: 30%;
-    border-color: black;
-    border-width: 10px;
+    border-style: solid;
+    border-color: gray;
+    padding: 25px 25px 25px 25px;
+}
+
+.center_div{
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: auto;
+    width:30% /* value of your choice which suits your alignment */
 }
