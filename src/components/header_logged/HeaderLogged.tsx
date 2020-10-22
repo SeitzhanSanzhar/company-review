@@ -1,23 +1,23 @@
-import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import  FormControl  from 'react-bootstrap/FormControl';
-import  Navbar  from 'react-bootstrap/Navbar';
-import Nav  from 'react-bootstrap/Nav';
-import BusinessRoundedIcon from "@material-ui/icons/BusinessRounded";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
-import {Toolbar} from "@material-ui/core";
+import BusinessRoundedIcon from "@material-ui/icons/BusinessRounded";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
+import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 
 const HeaderLogged = () => {
   return (
     <>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="home">GlassTeam</Navbar.Brand>
+        <Link className="navbar-brand" to="companies">GlassTeam</Link>
         <Nav className="mr-auto">
-          <Nav.Link href="home"><BusinessRoundedIcon color='inherit'/>Company list</Nav.Link>
-          <Nav.Link href="interviews"><QuestionAnswerIcon color='inherit'/>Interviews</Nav.Link>
-          <Nav.Link href="salaries"><AttachMoneyIcon color='inherit'/>Salaries</Nav.Link>
+          <Link className="nav-link" to="companies"><BusinessRoundedIcon color='inherit'/>Companies</Link>
+          <Link className="nav-link" to="interviews"><QuestionAnswerIcon color='inherit'/>Interviews</Link>
+          <Link className="nav-link" to="salaries"><AttachMoneyIcon color='inherit'/>Salaries</Link>
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />

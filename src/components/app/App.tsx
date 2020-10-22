@@ -1,14 +1,13 @@
 import React from 'react';
-import './App.css';
+import { Route, Switch } from "react-router";
+
+import { User } from "../../models/User";
+import CompanyList from '../company_list/CompanyList';
 import HeaderLogged from "../header_logged/HeaderLogged";
-
-import CompanyListItem from "../company_list_item/CompanyListItem";
-import CompanyList from "../company_list/CompanyList";
-
-import Registration from "../register/Register";
-import {User} from "../../models/User";
-import {Route} from "react-router";
 import Login from "../login/Login";
+import Registration from "../register/Register";
+
+import './App.css';
 
 const users: User[] = [];
 
@@ -16,18 +15,15 @@ const users: User[] = [];
 function App() {
   return (
     <div className="App">
-      <HeaderLogged/>
-        <Route path="/register">
-            <Registration adduser={addUser}/>
-        </Route>
-        <Route path="/login">
-            <Login/>
-        </Route>
+      <HeaderLogged />
+      <Switch>
+        <Route path='/' exact component={Login} />
+        <Route path='/login' exact component={Login} />
+        <Route path='/register' exact component={Registration} />
+        <Route path='/companies' component={CompanyList} />
+      </Switch>
     </div>
   );
-  function addUser(user: User) {
-      console.log(user);
-  }
 }
 
 export default App;
