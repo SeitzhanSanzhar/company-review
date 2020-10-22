@@ -23,6 +23,9 @@ function App() {
         <Route path="/login">
             <Login/>
         </Route>
+        <Route path="/company_list">
+          <CompanyList/>
+        </Route>
     </div>
   );
   function addUser(user: User) {

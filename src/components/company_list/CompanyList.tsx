@@ -8,7 +8,8 @@ import FormControl from "react-bootstrap/FormControl";
 
 interface IProps {}
 type IState = {
-  row_size: number,
+  rowSize: number,
+  searchValue: string,
   company_data: CompanyData[]
 }
 
@@ -27,9 +28,17 @@ class CompanyList extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      row_size: 3,
+      rowSize: 2,
+      searchValue: '',
       company_data: this.getCompanyData()
     };
+    this.handleChangeSearchValue = this.handleChangeSearchValue.bind(this);
+  }
+
+  handleChangeSearchValue(e: React.ChangeEvent<HTMLInputElement>) {
+    if (e && e.target) {
+      this.setState({searchValue: e.target.value});
+    }
   }
 
   render() {
@@ -37,7 +46,7 @@ class CompanyList extends React.Component<IProps, IState> {
     this.state.company_data.forEach((cd) => {
       console.log(currentDeck.length);
       currentDeck.push(cd);
-      if (currentDeck.length >= this.state.row_size) {
+      if (currentDeck.length >= this.state.rowSize) {
         cardDecksOf3.push(currentDeck);
         currentDeck = [];
       }
@@ -50,10 +59,22 @@ class CompanyList extends React.Component<IProps, IState> {
           <div className="container">
             <h5 className="display-4">Company Reviews from Real Employees</h5>
             <h5 className="display-6">Discover how employees rate and review their company!</h5>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <div className="dropdown">
+              <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdown_coins" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                Coin
+              </button>
+              <div id="menu" className="dropdown-menu" aria-labelledby="dropdown_coins">
+                <form className="px-4 py-2">
+                  <input type="search" className="form-control" id="searchCoin" placeholder="BTC"/>
+                </form>
+                <div id="menuItems"></div>
+                <div id="empty" className="dropdown-header">No coins found</div>
+              </div>
+            </div>
           </div>
         </div>
-        <p className='text-left'>Popular companies</p>
+        <b>Popular companies</b>
         <div className='container'>
           <CardDeck className='row'>
             {cardDecksOf3.map((item, index) => {
