@@ -13,11 +13,11 @@ const HeaderLogged = () => {
   return (
     <>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Company review</Navbar.Brand>
+        <Navbar.Brand href="home">GlassTeam</Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="#home"><BusinessRoundedIcon color='inherit'/>Company list</Nav.Link>
-          <Nav.Link href="#features"><QuestionAnswerIcon color='inherit'/>Interviews</Nav.Link>
-          <Nav.Link href="#pricing"><AttachMoneyIcon color='inherit'/>Salaries</Nav.Link>
+          <Nav.Link href="home"><BusinessRoundedIcon color='inherit'/>Company list</Nav.Link>
+          <Nav.Link href="interviews"><QuestionAnswerIcon color='inherit'/>Interviews</Nav.Link>
+          <Nav.Link href="salaries"><AttachMoneyIcon color='inherit'/>Salaries</Nav.Link>
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />

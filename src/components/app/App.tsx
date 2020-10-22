@@ -5,7 +5,7 @@ import Header from "../header/Header";
 import Login from "../login/Login";
 import HeaderLogged from "../header_logged/HeaderLogged";
 import CompanyListItem from "../company_list_item/CompanyListItem";
-import CompanyList from "../company_lilst/CompanyList";
+import CompanyList from "../company_list/CompanyList";
 
 function App() {
   return (
