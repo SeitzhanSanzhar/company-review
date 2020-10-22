@@ -1,6 +1,7 @@
-import React, { useReducer, useEffect } from 'react';
-import Form from 'react-bootstrap/Form';
+import React, { useEffect, useReducer } from 'react';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
 import './Login.css';
 
 type State = {

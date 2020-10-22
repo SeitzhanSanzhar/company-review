@@ -1,8 +1,10 @@
-import React, {ReactElement, useState} from "react";
-import {User} from "../../models/User";
-import {Form} from "react-bootstrap";
+import React, { ReactElement, useState } from "react";
+import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import './Register.css'
+
+import { User } from "../../models/User";
+
+import './Register.css';
 
 interface Props {
     adduser: (user: User) => void;

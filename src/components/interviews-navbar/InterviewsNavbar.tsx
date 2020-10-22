@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
-import  Navbar  from 'react-bootstrap/Navbar';
-import Nav  from 'react-bootstrap/Nav';
-import Form from 'react-bootstrap/Form';
-import BusinessRoundedIcon from "@material-ui/icons/BusinessRounded";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
-import {Toolbar} from "@material-ui/core";
+import BusinessRoundedIcon from "@material-ui/icons/BusinessRounded";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
-import  FormControl  from 'react-bootstrap/FormControl';
+import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 interface Props {
     
