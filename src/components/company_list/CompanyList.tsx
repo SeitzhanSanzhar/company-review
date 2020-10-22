@@ -65,12 +65,15 @@ class CompanyList extends React.Component<IProps, IState> {
                       aria-expanded="false">
                 Coin
               </button>
-              <div id="menu" className="dropdown-menu" aria-labelledby="dropdown_coins">
-                <form className="px-4 py-2">
-                  <input type="search" className="form-control" id="searchCoin" placeholder="BTC"/>
-                </form>
-                <div id="menuItems"></div>
-                <div id="empty" className="dropdown-header">No coins found</div>
+              <div className="dropdown show">
+                <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown link
+                </a>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a className="dropdown-item" href="#">Action</a>
+                  <a className="dropdown-item" href="#">Another action</a>
+                  <a className="dropdown-item" href="#">Something else here</a>
+                </div>
               </div>
             </div>
           </div>
