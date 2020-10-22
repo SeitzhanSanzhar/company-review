@@ -3,6 +3,8 @@ import CompanyListItem from "../company_list_item/CompanyListItem";
 import './CompanyList.css';
 import CardDeck from "react-bootstrap/CardDeck";
 import {CompanyData} from "../../models/CompanyData";
+import Button from "react-bootstrap/Button";
+import FormControl from "react-bootstrap/FormControl";
 
 interface IProps {}
 type IState = {
@@ -43,17 +45,27 @@ class CompanyList extends React.Component<IProps, IState> {
     if (currentDeck.length != 0)
       cardDecksOf3.push(currentDeck);
     return (
-      <>
-        <CardDeck className='card-wrapper'>
-          {cardDecksOf3.map((item, index) => {
-            return (
-              <CardDeck>
-                {item.map(cd => <CompanyListItem company_data={cd} />)}
-              </CardDeck>
-            )
-          })}
-        </CardDeck>
-      </>
+      <div>
+        <div className='jumbotron'>
+          <div className="container">
+            <h5 className="display-4">Company Reviews from Real Employees</h5>
+            <h5 className="display-6">Discover how employees rate and review their company!</h5>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          </div>
+        </div>
+        <p className='text-left'>Popular companies</p>
+        <div className='container'>
+          <CardDeck className='row'>
+            {cardDecksOf3.map((item, index) => {
+              return (
+                <CardDeck>
+                  {item.map(cd => <CompanyListItem company_data={cd} />)}
+                </CardDeck>
+              )
+            })}
+          </CardDeck>
+        </div>
+      </div>
     );
   }
 }
