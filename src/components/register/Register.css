@@ -1,15 +1,12 @@
-.login-form {
+.register-form {
     height: 30%;
     border-style: solid;
     border-color: gray;
     padding: 25px 25px 25px 25px;
-    border-radius: 20px;
-    border-width: thin;
-}
-
-.center_div{
     margin: 0 auto;
     margin-top: 10%;
     margin-bottom: auto;
-    width:30% /* value of your choice which suits your alignment */
+    width:30%;
+    border-radius: 20px;
+    border-width: thin;
 }
