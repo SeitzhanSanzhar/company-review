@@ -29,7 +29,7 @@ export default class InterviewsList extends Component<Props, State> {
     render() {
         return (
             <div className="interview-container">
-                {this.state.interviews.map((interview) => <InterviewItem interview={interview}/>)}
+                {this.state.interviews.map((interview) => <InterviewItem key={interview.id} interview={interview}/>)}
             </div>
         )
     }

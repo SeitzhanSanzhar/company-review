@@ -32,6 +32,7 @@ h2 {
 
 #input-submit {
    color: white; 
+   caret-color: transparent;
    font-size: larger;
    background: #5bc0eb;
    cursor: pointer;
@@ -39,6 +40,7 @@ h2 {
    height: 60px;
    margin: auto;
    margin-top: 10px;
+   text-align: center;
 }
 
 #input-submit:hover {
@@ -64,8 +66,8 @@ textarea {
 }
 
 .left {
-     margin-right: 2%; 
-     box-sizing: border-box;
+   margin-right: 2%; 
+   box-sizing: border-box;
 }
 
 

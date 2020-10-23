@@ -16,9 +16,9 @@ export default function InterviewAdd({ addInterview }: Props): ReactElement {
         document.title = "Add an interview";
     }, [])
     
-    function handleSubmit(intv: Interview) {
-        if (intv.topic.length >= 6 && intv.text.length >= 6) {
-            addInterview(intv);
+    function handleSubmit() {
+        if (interview.topic.length >= 6 && interview.text.length >= 6) {
+            addInterview(interview);
         } else {
             alert("Topic length and text length must me at least 6!")
         }
@@ -32,7 +32,7 @@ export default function InterviewAdd({ addInterview }: Props): ReactElement {
                     <input className="interview-input" type="text" placeholder="Topic" onChange={(e) => { interview.topic = e.target.value } }/>
                     <input className="interview-input" type="text" placeholder="Verdict" onChange={(e) => { 
                         interview.verdict = e.target.value} }/>
-                    <input className="interview-input" type="submit" value="Submit" id="input-submit" onClick={() => handleSubmit(interview)}/>
+                    <input className="interview-input" type="" value="Submit" id="input-submit" onClick={() => handleSubmit()}/>
                 </div>
                 <div className="half right cf">
                     <textarea className="interview-input" placeholder="Type your interview report here..." onChange={(e) => { interview.text = e.target.value} }></textarea>

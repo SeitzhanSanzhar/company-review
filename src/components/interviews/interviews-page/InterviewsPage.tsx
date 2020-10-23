@@ -27,7 +27,7 @@ const interviews: Interview[] = [
         verdict: "Reject"
     },
     {
-        id: 1,
+        id: 3,
         topic: "Facebook phone interview",
         author: "Adilet",
         text: "I had two phone interviews at Facebook London for an internship. There were total of 4 problems and a behavioral interview. Overall this was a great experience",
@@ -52,7 +52,8 @@ export default class InterviewsNavbar extends Component<Props, State> {
         this.addButtonRef = React.createRef();
         this.navigateToDiscoverTab = this.navigateToDiscoverTab.bind(this);
         this.navigateToAddTab = this.navigateToAddTab.bind(this);
-
+        this.addInterview = this.addInterview.bind(this);
+        
         this.state = {
             showDiscover: true,
         }
@@ -79,13 +80,12 @@ export default class InterviewsNavbar extends Component<Props, State> {
     }
 
     addInterview(interview: Interview) {
-        console.log(interview);
         interview.id = interviews.length + 1;
         interviews.push(interview);
+        this.navigateToDiscoverTab();
     }
 
-    render() {
-        
+    render() {  
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
