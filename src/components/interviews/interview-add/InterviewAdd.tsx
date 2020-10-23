@@ -11,12 +11,14 @@ export default function InterviewAdd({ addInterview }: Props): ReactElement {
     let interview: Interview = { id: 0, topic: '', verdict: '', text: '', author: '' };
     
     useEffect(() => {
-        console.log("useEffect")
+        document.title = "Add an interview";
     }, [])
     
     function handleSubmit(intv: Interview) {
         if (intv.topic.length >= 6 && intv.text.length >= 6) {
             addInterview(intv);
+        } else {
+            alert("Topic length and text length must me at least 6!")
         }
     } 
 
