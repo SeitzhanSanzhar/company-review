@@ -9,7 +9,7 @@ interface Props {
 
 export default function InterviewItem({ interview }: Props): ReactElement {
     return(
-        <Card className='text-left'>
+        <Card className='text-left m-3'>
             <Card.Header as="h5">{interview.topic} <span className="author"> @ {interview.author} </span></Card.Header>
             <Card.Body className="interview-body">
                 <Card.Text>

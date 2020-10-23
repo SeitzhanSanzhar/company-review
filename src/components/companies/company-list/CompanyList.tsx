@@ -61,7 +61,7 @@ class CompanyList extends React.Component<IProps, IState> {
             <h5 className="display-6">Discover how employees rate and review their company!</h5>
           </div>
         </div>
-        <b>Popular companies</b>
+        <b><h4>Popular companies</h4></b>
         <div className='container'>
           <CardDeck className='row'>
             {cardDecksOf3.map((item, index) => {
