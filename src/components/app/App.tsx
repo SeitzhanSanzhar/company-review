@@ -61,18 +61,18 @@ function App() {
       <Route path="/register">
           <Registration addUser={addUser}/>
       </Route>
-      <Switch>
-        <Route path='/' exact component={Login} />
-        <ColorContext.Provider value={'primary'}>
-          <Route path='/login' exact component={Login} />
+      <ColorContext.Provider value = {'danger'}>
+        <Switch>
+          <Route path='/companies' component={CompanyList} />
+          <Route path='/company_detail' component={CompanyDetail} />
+          <Route path='/interviews' component={InterviewsPage} />
+          <Route path='/login' component={Login} />
+          <Route path='/' component={Login} />
+          <ReviewContext.Provider value={reviews}>
+            <Route path='/reviews' component={ReviewList} />
+          </ReviewContext.Provider>
+        </Switch>
         </ColorContext.Provider>
-        <Route path='/companies' component={CompanyList} />
-        <Route path='/company_detail' component={CompanyDetail} />
-        <Route path='/interviews' component={InterviewsPage} />
-        <ReviewContext.Provider value={reviews}>
-          <Route path='/reviews' component={ReviewList} />
-        </ReviewContext.Provider>
-      </Switch>
     </div>
   );
   function addUser(user: User) {
