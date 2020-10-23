@@ -1,21 +1,22 @@
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import BusinessRoundedIcon from "@material-ui/icons/BusinessRounded";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 
 const HeaderLogged = () => {
   const inputSearchRef = useRef<HTMLInputElement>(null);
+
   const handleOnClickSearch = () => {
     if (inputSearchRef !== null && inputSearchRef.current !== null ) {
       alert(`no result for query: ${inputSearchRef.current.value}`);
     }
   }
+  
   return (
     <>
       <Navbar bg="dark" variant="dark">
@@ -23,7 +24,7 @@ const HeaderLogged = () => {
         <Nav className="mr-auto">
           <Link className="nav-link" to="companies"><BusinessRoundedIcon color='inherit'/> Companies</Link>
           <Link className="nav-link" to="interviews"><QuestionAnswerIcon color='inherit'/> Interviews</Link>
-          <Link className="nav-link" to="salaries"><AttachMoneyIcon color='inherit'/> Salaries</Link>
+          <Link className="nav-link" to="reviews"><AttachMoneyIcon color='inherit'/> Reviews</Link>
         </Nav>
         <Form inline>
           <input ref = {inputSearchRef} type="text" className="mr-sm-2" placeholder='Search'/>

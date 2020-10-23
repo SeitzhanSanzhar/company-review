@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-
-import InterviewsNavbar from '../interviews-navbar/InterviewsNavbar';
+import React, { Component } from 'react'
 
 interface Props {
     
@@ -15,7 +13,7 @@ export default class InterviewsList extends Component<Props, State> {
     render() {
         return (
             <div>
-                <InterviewsNavbar />
+                <h1>list</h1>
             </div>
         )
     }

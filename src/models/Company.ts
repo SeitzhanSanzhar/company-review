@@ -1,4 +1,4 @@
-export interface CompanyData {
+export default interface CompanyData {
   name: string,
   rating: number,
   image: string

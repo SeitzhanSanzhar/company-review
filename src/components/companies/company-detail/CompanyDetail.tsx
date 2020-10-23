@@ -1,7 +1,6 @@
-import {render} from "react-dom";
 import React from "react";
 import './CompanyDetail.css';
-import {CompanyData} from "../../models/CompanyData";
+import CompanyData from "../../../models/Company";
 
 interface IProps {
   companyData: CompanyData;
