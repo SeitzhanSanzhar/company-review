@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, {FormEvent, ReactElement, useState} from "react";
 import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 
@@ -7,19 +7,25 @@ import { User } from "../../models/User";
 import './Register.css';
 
 interface Props {
-    adduser: (user: User) => void;
+    addUser: (user: User) => void;
 }
 
-export default function Registration({adduser}: Props): ReactElement {
+export default function Registration({addUser}: Props): ReactElement {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmpassword, setConfirmpassword] = useState('');
 
+
+    function handleSubmit(event: FormEvent<HTMLElement>):void {
+        const user: User = {username: username, email: email, password:password};
+        addUser(user);
+    }
+
     return (
         // eslint-disable-next-line react/jsx-no-undef
         <div>
-        <Form className='register-form'>
+        <Form className='register-form' onSubmit={handleSubmit}>
             <Form.Group controlId="formGroupUsername">
                 <Form.Label>Username</Form.Label>
                 <Form.Control type="email" placeholder="Enter username"  value={username} onChange={e => setUsername(e.target.value)}/>
