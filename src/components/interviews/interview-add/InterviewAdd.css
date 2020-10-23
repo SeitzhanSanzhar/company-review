@@ -1,0 +1,91 @@
+h2 {
+   margin-top: 1em;
+   text-align: center;
+   color: #a8a8a8;
+   box-sizing: border-box;
+   text-shadow: 1px 1px 0 rgba(white, 1);
+}
+
+.cf-add {
+   max-width: 700px;
+   text-align: center;
+   margin: 20px auto;
+   box-sizing: border-box;
+}
+
+.interview-input {
+   background: #f1f1f1;
+   border:0; outline:0;
+   padding: 1em;
+   border-radius: 8px; 
+   display: block;
+   width: 100%;
+   margin-top: 1em;
+   font-family: sans-serif;
+   box-shadow: 0 1px 1px rgba(black, 0.1);
+   resize: none;
+}
+
+.interview-input:focus {
+   box-shadow: 0 0px 2px #2893c0;
+}
+
+#input-submit {
+   color: white; 
+   font-size: larger;
+   background: #5bc0eb;
+   cursor: pointer;
+   width: 100%;
+   height: 60px;
+   margin: auto;
+   margin-top: 10px;
+}
+
+#input-submit:hover {
+   background-color: #57b0d6;
+   box-shadow: 0 1px 1px 1px rgba(#aaa, 0.6);
+}
+
+textarea {
+    height: 200px;
+    background: #f1f1f1;
+}
+
+.half {
+  float: left;
+  width: 48%;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+}
+
+.right { 
+   width: 50%; 
+   box-sizing: border-box;
+}
+
+.left {
+     margin-right: 2%; 
+     box-sizing: border-box;
+}
+
+
+@media (max-width: 480px) {
+  .half {
+     width: 100%; 
+     float: none;
+     margin-bottom: 0; 
+     box-sizing: border-box;
+  }
+}
+
+.cf-add:before,
+.cf-add:after {
+    content: " "; 
+    display: table; 
+    box-sizing: border-box;
+}
+
+.cf-add:after {
+    clear: both;
+    box-sizing: border-box;
+}
