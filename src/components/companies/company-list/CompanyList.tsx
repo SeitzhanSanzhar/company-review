@@ -1,6 +1,6 @@
 import React from 'react';
 import CardDeck from "react-bootstrap/CardDeck";
-import { CompanyData } from "../../../models/Company";
+import CompanyData  from "../../../models/Company";
 import CompanyListItem from "../company-list-item/CompanyListItem";
 import './CompanyList.css';
 

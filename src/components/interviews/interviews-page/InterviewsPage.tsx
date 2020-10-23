@@ -34,7 +34,6 @@ export default class InterviewsNavbar extends Component<Props, State> {
             this.addButtonRef.current.className = "nav-link";
         }
         this.setState({showDiscover: true});
-        console.log(this.state.showDiscover);
     }
 
     navigateToAddTab() {
@@ -45,7 +44,10 @@ export default class InterviewsNavbar extends Component<Props, State> {
             this.addButtonRef.current.className = "nav-link active";
         }
         this.setState({showDiscover: false});
-        console.log(this.state.showDiscover);
+    }
+
+    addInterview() {
+
     }
 
     render() {
@@ -68,7 +70,7 @@ export default class InterviewsNavbar extends Component<Props, State> {
                 </div>
                 </nav>
 
-                {this.state.showDiscover ? <InterviewsList/> : <InterviewAdd/>}
+                {this.state.showDiscover ? <InterviewsList/> : <InterviewAdd addInterview={this.addInterview}/>}
             </div>
         );
     }
