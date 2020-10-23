@@ -3,11 +3,10 @@ import { Route, Switch } from "react-router";
 import { User } from "../../models/User";
 import CompanyList from '../company_list/CompanyList';
 import HeaderLogged from "../header_logged/HeaderLogged";
-import InterviewsList from '../interviews-list/InterviewsList';
+import Interviews from '../interviews/Interviews';
 import Login from "../login/Login";
 import Registration from "../register/Register";
 import './App.css';
-
 
 
 const users: User[] = [];
@@ -24,7 +23,7 @@ function App() {
         <Route path='/' exact component={Login} />
         <Route path='/login' exact component={Login} />
         <Route path='/companies' component={CompanyList} />
-        <Route path='/interviews' component={InterviewsList} />
+        <Route path='/interviews' component={Interviews} />
       </Switch>
     </div>
   );
