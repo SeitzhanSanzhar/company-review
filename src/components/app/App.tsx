@@ -10,6 +10,7 @@ import ReviewList from '../reviews/reviews-list/ReviewList';
 import './App.css';
 import ReviewContext from "../../utils/ReviewContext";
 import {Review} from "../../models/Review";
+import ReviewView from "../reviews/review-view/ReviewView";
 
 const users: User[] = [];
 
@@ -63,9 +64,10 @@ function App() {
         <Route path='/' exact component={Login} />
         <Route path='/login' exact component={Login} />
         <Route path='/companies' component={CompanyList} />
-        <Route path='/interviews' component={InterviewsPage} />
+        <Route path='/interviews'  component={InterviewsPage} />
         <ReviewContext.Provider value={reviews}>
-        <Route path='/reviews' component={ReviewList} />
+            <Route exact path='/reviews/' component={ReviewList} />
+            <Route path='/reviews/:id/' component={ReviewView} />
         </ReviewContext.Provider>
       </Switch>
     </div>

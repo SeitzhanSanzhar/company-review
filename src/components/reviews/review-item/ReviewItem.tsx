@@ -2,12 +2,14 @@ import React, {ReactElement, useEffect, useState} from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Review } from "../../../models/Review";
+import {Link} from "react-router-dom";
 
 type ReviewProps = {
     review: Review;
     changeReviewLikes: (review: Review, likes: number) => void;
+    isView?: boolean;
 }
-export default function ReviewItem({review, changeReviewLikes}: ReviewProps): ReactElement {
+export default function ReviewItem({review, changeReviewLikes, isView}: ReviewProps): ReactElement {
     const [likes, setlikes] = useState(review.likes);
 
     useEffect(() => {
@@ -23,9 +25,14 @@ export default function ReviewItem({review, changeReviewLikes}: ReviewProps): Re
                     {review.review}
                 </Card.Text>
                 <p className="text-success">Likes: {review.likes}</p>
-                <Button variant="primary">View Post</Button>
-                <Button variant="success" onClick={() => setlikes(likes + 1)}>Like</Button>
-                <Button variant="danger" onClick={() => setlikes(likes - 1)}>Dislike</Button>
+                {!isView &&
+                <Link to={`/reviews/${review.id}`}><Button variant="primary m-2">View Post</Button></Link>
+                }
+                <Button variant="success m-2" onClick={() => setlikes(likes + 1)}>Like</Button>
+                <Button variant="danger m-2" onClick={() => setlikes(likes - 1)}>Dislike</Button>
+                {isView &&
+                <Link to={`/reviews`}><Button variant="primary m-2">Back</Button></Link>
+                }
             </Card.Body>
         </Card>
     );
