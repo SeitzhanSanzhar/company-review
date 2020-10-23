@@ -25,7 +25,7 @@ class CompanyListItem extends React.Component<IProps, IState> {
             <div className="card-text">Some quick example text to build on the card title and make up the bulk of
               the card's content.</div>
             <div className="card-link">
-              <Link to='company_detail'>Details</Link>
+              <Link to='/company_detail'>Details</Link>
             </div>
           </div>
         </div>
