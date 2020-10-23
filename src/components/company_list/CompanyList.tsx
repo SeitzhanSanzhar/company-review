@@ -1,14 +1,16 @@
 import React from 'react';
-import CompanyListItem from "../company_list_item/CompanyListItem";
-import './CompanyList.css';
 import CardDeck from "react-bootstrap/CardDeck";
-import {CompanyData} from "../../models/CompanyData";
-import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
+
+import { CompanyData } from "../../models/CompanyData";
+import CompanyListItem from "../company_list_item/CompanyListItem";
+
+import './CompanyList.css';
 
 interface IProps {}
 type IState = {
-  row_size: number,
+  rowSize: number,
+  searchValue: string,
   company_data: CompanyData[]
 }
 
@@ -27,9 +29,17 @@ class CompanyList extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      row_size: 3,
+      rowSize: 2,
+      searchValue: '',
       company_data: this.getCompanyData()
     };
+    this.handleChangeSearchValue = this.handleChangeSearchValue.bind(this);
+  }
+
+  handleChangeSearchValue(e: React.ChangeEvent<HTMLInputElement>) {
+    if (e && e.target) {
+      this.setState({searchValue: e.target.value});
+    }
   }
 
   render() {
@@ -37,7 +47,7 @@ class CompanyList extends React.Component<IProps, IState> {
     this.state.company_data.forEach((cd) => {
       console.log(currentDeck.length);
       currentDeck.push(cd);
-      if (currentDeck.length >= this.state.row_size) {
+      if (currentDeck.length >= this.state.rowSize) {
         cardDecksOf3.push(currentDeck);
         currentDeck = [];
       }
@@ -50,10 +60,25 @@ class CompanyList extends React.Component<IProps, IState> {
           <div className="container">
             <h5 className="display-4">Company Reviews from Real Employees</h5>
             <h5 className="display-6">Discover how employees rate and review their company!</h5>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <div className="dropdown">
+              <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdown_coins" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                Coin
+              </button>
+              <div className="dropdown show">
+                <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown link
+                </a>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a className="dropdown-item" href="#">Action</a>
+                  <a className="dropdown-item" href="#">Another action</a>
+                  <a className="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <p className='text-left'>Popular companies</p>
+        <b>Popular companies</b>
         <div className='container'>
           <CardDeck className='row'>
             {cardDecksOf3.map((item, index) => {

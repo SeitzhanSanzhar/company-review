@@ -1,6 +1,6 @@
 import React from 'react';
-import {CompanyData} from "../../models/CompanyData";
-import Card from 'react-bootstrap/Card'
+
+import { CompanyData } from "../../models/CompanyData";
 
 interface IProps {
   company_data: CompanyData;

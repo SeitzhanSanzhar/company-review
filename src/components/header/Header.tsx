@@ -1,11 +1,12 @@
-import React from 'react';
-import {AppBar} from "@material-ui/core";
-import './Header.css';
+import { AppBar, Toolbar } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import { Toolbar } from '@material-ui/core';
-import BusinessRoundedIcon from '@material-ui/icons/BusinessRounded';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import BusinessRoundedIcon from '@material-ui/icons/BusinessRounded';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
+import React from 'react';
+
+import './Header.css';
+
 // import { Link } from 'react-router-dom';
 
 type Props = {

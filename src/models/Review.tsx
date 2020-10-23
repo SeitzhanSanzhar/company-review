@@ -3,4 +3,5 @@ export interface Review {
     author: string;
     companyName: string;
     review: string;
+    likes: number;
 }
