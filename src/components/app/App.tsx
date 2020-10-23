@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from "react-router";
 import { User } from "../../models/User";
 import CompanyList from '../companies/company-list/CompanyList';
-import HeaderLogged from "../header/HeaderLogged";
+import HeaderLogged from "../header/Header";
 import InterviewsPage from '../interviews/interviews-page/InterviewsPage';
 import Login from "../login/Login";
 import Registration from "../register/Register";
