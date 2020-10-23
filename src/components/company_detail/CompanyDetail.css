@@ -1,0 +1,12 @@
+.company-image {
+    padding: 10px 10px 10px 10px;
+}
+
+.company-info {
+}
+
+.company-detail {
+    display: grid;
+    grid-template-columns: 15% 70%;
+    padding: 25px 25px 25px 25px;
+}
