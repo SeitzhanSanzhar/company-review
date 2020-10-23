@@ -80,7 +80,6 @@ function App() {
                   <Route exact path='/' component={Login} />
                   <Route exact path='/reviews/' component={ReviewList} />
                   <Route path='/reviews/:id/' component={ReviewView} />
-                  <Route exact path='/register' component={Registration}/>
               </Switch>
           </ColorContext.Provider>
           </ReviewContext.Provider>
