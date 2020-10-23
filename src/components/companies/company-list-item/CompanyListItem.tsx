@@ -1,13 +1,14 @@
-import React from 'react';
-import { Company } from "../../../models/Company";
-
+import React, {useContext} from 'react';
+import CompanyData  from "../../../models/Company";
+import {Link, Redirect, Route} from "react-router-dom";
+import {CompanyContext} from "../../../contexts/CompanyContext";
+import CompanyDetail from "../company-detail/CompanyDetail";
 
 interface IProps {
-  company_data: Company;
+  company_data: CompanyData,
 }
 
 interface IState {
-
 }
 
 class CompanyListItem extends React.Component<IProps, IState> {
@@ -23,7 +24,9 @@ class CompanyListItem extends React.Component<IProps, IState> {
             <div className="card-subtitle text-muted">Rating: {this.props.company_data.rating}</div>
             <div className="card-text">Some quick example text to build on the card title and make up the bulk of
               the card's content.</div>
-            <div className="card-link"><a href="#">Company interviews</a> <a href="#">Salaries</a></div>
+            <div className="card-link">
+              <Link to='company_detail'>Details</Link>
+            </div>
           </div>
         </div>
       </>

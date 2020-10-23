@@ -5,8 +5,16 @@
 }
 
 .grid-item {
+    /*overflow-y: scroll;*/
+    margin: 20px 20px 20px 20px;
+    border-width: 20px;
+    border-color: black;
+}
+
+.grid-item-scroll {
     overflow-y: scroll;
     margin: 20px 20px 20px 20px;
     border-width: 20px;
     border-color: black;
+    height: 70%;
 }

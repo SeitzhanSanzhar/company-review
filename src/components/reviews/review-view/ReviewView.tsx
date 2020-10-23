@@ -2,26 +2,23 @@ import React, {ReactElement, useContext, useState} from "react";
 import { Review } from "../../../models/Review";
 import ReviewAdd from "../review-add/ReviewAdd";
 import ReviewItem from "../review-item/ReviewItem";
-import './ReviewList.css';
 import ReviewContext from "../../../utils/ReviewContext";
+import {useRouteMatch} from "react-router";
 
-type ReviewProps = {
+type Props = {
+
 }
 
-export default function ReviewList({}: ReviewProps): ReactElement {
+export default function ReviewView({}: Props): ReactElement {
     const [number, setNumber] = useState(6);
     const [a, setA] = useState(0);
     const reviews = useContext<Review[]>(ReviewContext);
+    const match = useRouteMatch<{id: string}>();
     return(
-        <div className="grid-container">
-            <div className="grid-item fill">
-                <ReviewAdd addReview={addReview}/>
-            </div>
-            <div className="grid-item-scroll">
-                {reviews.map((review) =>   <ReviewItem review={review} changeReviewLikes={changeReviewLikes}/>)}
-            </div>
+        <div>
+            {match.params.id}
+            <ReviewItem review={reviews.filter(r => r.id === Number(match.params.id))[0]} changeReviewLikes={changeReviewLikes} isView={true}/>;
         </div>
-
     );
     function changeReviewLikes(review: Review, likes: number) {
         review.likes = likes;
