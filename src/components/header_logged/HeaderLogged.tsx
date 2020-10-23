@@ -21,9 +21,9 @@ const HeaderLogged = () => {
       <Navbar bg="dark" variant="dark">
         <Link className="navbar-brand" to="companies">GlassTeam</Link>
         <Nav className="mr-auto">
-          <Link className="nav-link" to="companies"><BusinessRoundedIcon color='inherit'/>Companies</Link>
-          <Link className="nav-link" to="interviews"><QuestionAnswerIcon color='inherit'/>Interviews</Link>
-          <Link className="nav-link" to="salaries"><AttachMoneyIcon color='inherit'/>Salaries</Link>
+          <Link className="nav-link" to="companies"><BusinessRoundedIcon color='inherit'/> Companies</Link>
+          <Link className="nav-link" to="interviews"><QuestionAnswerIcon color='inherit'/> Interviews</Link>
+          <Link className="nav-link" to="salaries"><AttachMoneyIcon color='inherit'/> Salaries</Link>
         </Nav>
         <Form inline>
           <input ref = {inputSearchRef} type="text" className="mr-sm-2" placeholder='Search'/>
