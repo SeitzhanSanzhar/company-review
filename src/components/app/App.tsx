@@ -61,6 +61,9 @@ function App() {
       <Route path="/register">
           <Registration addUser={addUser}/>
       </Route>
+      <ReviewContext.Provider value={reviews}>
+        <Route path='/reviews' component={ReviewList} />
+      </ReviewContext.Provider>
       <ColorContext.Provider value = {'danger'}>
         <Switch>
           <Route path='/companies' component={CompanyList} />
@@ -68,11 +71,8 @@ function App() {
           <Route path='/interviews' component={InterviewsPage} />
           <Route path='/login' component={Login} />
           <Route path='/' component={Login} />
-          <ReviewContext.Provider value={reviews}>
-            <Route path='/reviews' component={ReviewList} />
-          </ReviewContext.Provider>
         </Switch>
-        </ColorContext.Provider>
+      </ColorContext.Provider>
     </div>
   );
   function addUser(user: User) {
