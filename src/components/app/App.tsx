@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router";
 import { User } from "../../models/User";
 import CompanyList from '../company_list/CompanyList';
 import HeaderLogged from "../header_logged/HeaderLogged";
+import InterviewsList from '../interviews-list/InterviewsList';
 import Login from "../login/Login";
 import Registration from "../register/Register";
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/login' exact component={Login} />
         <Route path='/register' exact component={Registration} />
         <Route path='/companies' component={CompanyList} />
+        <Route path='/interviews' component={InterviewsList} />
       </Switch>
     </div>
   );
