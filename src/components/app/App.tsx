@@ -1,18 +1,19 @@
 import React from 'react';
 import { Route, Switch } from "react-router";
+import { Review } from "../../models/Review";
 import { User } from "../../models/User";
+import ColorContext from "../../utils/ColorContext";
+import ReviewContext from "../../utils/ReviewContext";
+import UserContext from '../../utils/UserContext';
+import CompanyDetail from "../companies/company-detail/CompanyDetail";
 import CompanyList from '../companies/company-list/CompanyList';
 import Header from "../header/Header";
 import InterviewsPage from '../interviews/interviews-page/InterviewsPage';
 import Login from "../login/Login";
 import Registration from "../register/Register";
+import ReviewView from "../reviews/review-view/ReviewView";
 import ReviewList from '../reviews/reviews-list/ReviewList';
 import './App.css';
-import ReviewContext from "../../utils/ReviewContext";
-import {Review} from "../../models/Review";
-import ReviewView from "../reviews/review-view/ReviewView";
-import CompanyDetail from "../companies/company-detail/CompanyDetail";
-import ColorContext from "../../utils/ColorContext";
 
 const users: User[] = [];
 
@@ -67,6 +68,7 @@ function App() {
           <Route path="/register">
               <Registration addUser={addUser}/>
           </Route>
+          <UserContext.Provider value={'Alikhan'}>
           <ReviewContext.Provider value={reviews}>
           <ColorContext.Provider value = {'danger'}>
               <Switch>
@@ -81,6 +83,7 @@ function App() {
               </Switch>
           </ColorContext.Provider>
           </ReviewContext.Provider>
+          </UserContext.Provider>
       </div>
   );
   function addUser(user: User) {

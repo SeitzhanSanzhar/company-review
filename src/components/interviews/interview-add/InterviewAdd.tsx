@@ -1,5 +1,6 @@
-import React, { ReactElement, useEffect } from 'react';
+import React, { ReactElement, useContext, useEffect } from 'react';
 import { Interview } from '../../../models/Interview';
+import UserContext from '../../../utils/UserContext';
 import './InterviewAdd.css';
 
 interface Props {
@@ -7,8 +8,9 @@ interface Props {
 }
 
 export default function InterviewAdd({ addInterview }: Props): ReactElement {
+    const username = useContext<string>(UserContext);
     
-    let interview: Interview = { id: 0, topic: '', verdict: '', text: '', author: '' };
+    let interview: Interview = { id: 0, topic: '', verdict: '', text: '', author: username };
     
     useEffect(() => {
         document.title = "Add an interview";
