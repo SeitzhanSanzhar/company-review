@@ -28,7 +28,7 @@ class CompanyDetail extends React.Component<IProps, IState>{
           popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
           recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </div>
-        <Link to='interviews' component={InterviewsList}/>
+        <Link to='interviews'/>
       </div>
     );
   }

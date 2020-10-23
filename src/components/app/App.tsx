@@ -70,8 +70,8 @@ function App() {
           <ReviewContext.Provider value={reviews}>
           <ColorContext.Provider value = {'danger'}>
               <Switch>
-                  <Route exact path='/companies' component={CompanyList} />
-                  <Route exact path='/company_detail' component={CompanyDetail} />
+                  <Route path='/companies' component={CompanyList} />
+                  <Route path='/company_detail' component={CompanyDetail} />
                   <Route path='/interviews' component={InterviewsPage} />
                   <Route exact path='/login' component={Login} />
                   <Route exact path='/' component={Login} />

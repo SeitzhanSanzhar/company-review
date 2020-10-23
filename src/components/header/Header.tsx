@@ -13,7 +13,7 @@ const HeaderLogged = () => {
 
   const handleOnClickSearch = () => {
     if (inputSearchRef !== null && inputSearchRef.current !== null ) {
-      alert(`no result for query: ${inputSearchRef.current.value}`);
+      alert(`No result for query: ${inputSearchRef.current.value}`);
     }
   }
   
