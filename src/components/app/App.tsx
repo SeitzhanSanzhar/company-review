@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Switch } from "react-router";
+import ColorContext from "../../contexts/ColorContext";
+import ReviewContext from "../../contexts/ReviewContext";
+import UserContext from '../../contexts/UserContext';
 import { Review } from "../../models/Review";
 import { User } from "../../models/User";
-import ColorContext from "../../utils/ColorContext";
-import ReviewContext from "../../utils/ReviewContext";
-import UserContext from '../../utils/UserContext';
 import CompanyDetail from "../companies/company-detail/CompanyDetail";
 import CompanyList from '../companies/company-list/CompanyList';
 import Header from "../header/Header";

@@ -1,8 +1,7 @@
-import React, {useContext, useEffect, useReducer, useRef} from 'react';
-import Button from 'react-bootstrap/Button';
+import React, { useContext, useEffect, useReducer, useRef } from 'react';
 import Form from 'react-bootstrap/Form';
+import ColorContext from "../../contexts/ColorContext";
 import './Login.css';
-import ColorContext from "../../utils/ColorContext";
 
 
 type State = {

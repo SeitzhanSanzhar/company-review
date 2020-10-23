@@ -1,6 +1,6 @@
 import React, { ReactElement, useContext, useEffect } from 'react';
+import UserContext from '../../../contexts/UserContext';
 import { Interview } from '../../../models/Interview';
-import UserContext from '../../../utils/UserContext';
 import './InterviewAdd.css';
 
 interface Props {
