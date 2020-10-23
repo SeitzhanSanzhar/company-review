@@ -1,0 +1,13 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    overflow: hidden;
+}
+
+.grid-item {
+    overflow-y: scroll;
+    margin: 20px 20px 20px 20px;
+    border-width: 3px;
+    border-color: black;
+    border-radius: 10px;
+}

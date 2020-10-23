@@ -34,6 +34,7 @@ export default function ReviewItem({review, changeReviewLikes, isView}: ReviewPr
                 <Link to={`/reviews`}><Button variant="primary m-2">Back</Button></Link>
                 }
             </Card.Body>
+            <div></div>
         </Card>
     );
 
