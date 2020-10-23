@@ -7,6 +7,7 @@ import InterviewsList from '../interviews-list/InterviewsList';
 import Login from "../login/Login";
 import Registration from "../register/Register";
 import './App.css';
+import ReviewList from "../review_list/ReviewList";
 
 
 
@@ -24,12 +25,13 @@ function App() {
         <Route path='/' exact component={Login} />
         <Route path='/login' exact component={Login} />
         <Route path='/companies' component={CompanyList} />
+        <Route path='/reviews' component={ReviewList} />
         <Route path='/interviews' component={InterviewsList} />
       </Switch>
     </div>
   );
   function addUser(user: User) {
-    users.push(user)
+    users.push(user);
     console.log('user added:' + user);
   }
 }
