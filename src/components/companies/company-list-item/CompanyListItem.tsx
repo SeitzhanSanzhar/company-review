@@ -1,8 +1,6 @@
-import React, {useContext} from 'react';
-import CompanyData  from "../../../models/Company";
-import {Link, Redirect, Route} from "react-router-dom";
-import {CompanyContext} from "../../../contexts/CompanyContext";
-import CompanyDetail from "../company-detail/CompanyDetail";
+import React from 'react';
+import { Link } from "react-router-dom";
+import CompanyData from "../../../models/Company";
 
 interface IProps {
   company_data: CompanyData,

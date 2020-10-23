@@ -18,6 +18,14 @@ export default class InterviewsList extends Component<Props, State> {
         }
     }
 
+    componentDidMount() {
+        document.title = "Explore interviews"
+    }
+
+    componentWillUnmount() {
+        document.title = "GlassTeam";
+    }
+
     render() {
         return (
             <div className="interview-container">

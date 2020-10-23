@@ -4,4 +4,5 @@ export interface Review {
     companyName: string;
     review: string;
     likes: number;
+    comments?: string[];
 }
