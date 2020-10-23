@@ -1,0 +1,29 @@
+.view-post {
+    background-color: #5bc0eb;
+    border: #5bc0eb 1px solid;
+}
+
+.view-post:hover {
+    background-color: #57b0d6;
+    border: #57b0d6 1px solid;
+}
+
+.like {
+    background-color: #84b527;
+    border: #84b527 1px solid;
+}
+
+.like:hover {
+    background-color: #73a714;
+    border: #73a714 1px solid;
+}
+
+.dislike {
+    background-color: #cc2b36;
+    border: #cc2b36 1px solid;
+}
+
+.dislike:hover {
+    background-color: #a7121c;
+    border: #a7121c 1px solid;
+}
