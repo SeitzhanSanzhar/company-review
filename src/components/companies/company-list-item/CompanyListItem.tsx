@@ -1,7 +1,8 @@
 import React, {useContext} from 'react';
 import CompanyData  from "../../../models/Company";
-import {Link, Redirect} from "react-router-dom";
+import {Link, Redirect, Route} from "react-router-dom";
 import {CompanyContext} from "../../../contexts/CompanyContext";
+import CompanyDetail from "../company-detail/CompanyDetail";
 
 interface IProps {
   company_data: CompanyData;
@@ -24,7 +25,7 @@ class CompanyListItem extends React.Component<IProps, IState> {
             <div className="card-text">Some quick example text to build on the card title and make up the bulk of
               the card's content.</div>
             <div className="card-link">
-              <Link to={{ pathname: '/company_detail'}}>Details</Link>
+              <Link to='/company_detail'>Details</Link>
             </div>
           </div>
         </div>

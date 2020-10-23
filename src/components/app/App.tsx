@@ -9,7 +9,9 @@ import Registration from "../register/Register";
 import ReviewList from '../reviews/reviews-list/ReviewList';
 import './App.css';
 import ReviewContext from "../../utils/ReviewContext";
+import ColorContext from "../../utils/ColorContext";
 import {Review} from "../../models/Review";
+import CompanyDetail from "../companies/company-detail/CompanyDetail";
 
 const users: User[] = [];
 
@@ -61,11 +63,14 @@ function App() {
       </Route>
       <Switch>
         <Route path='/' exact component={Login} />
-        <Route path='/login' exact component={Login} />
+        <ColorContext.Provider value={'primary'}>
+          <Route path='/login' exact component={Login} />
+        </ColorContext.Provider>
         <Route path='/companies' component={CompanyList} />
+        <Route path='/company_detail' component={CompanyDetail} />
         <Route path='/interviews' component={InterviewsPage} />
         <ReviewContext.Provider value={reviews}>
-        <Route path='/reviews' component={ReviewList} />
+          <Route path='/reviews' component={ReviewList} />
         </ReviewContext.Provider>
       </Switch>
     </div>

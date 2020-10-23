@@ -1,7 +1,8 @@
-import React, {useEffect, useReducer, useRef} from 'react';
+import React, {useContext, useEffect, useReducer, useRef} from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Login.css';
+import ColorContext from "../../utils/ColorContext";
 
 
 type State = {
@@ -61,6 +62,7 @@ const reducer = (state: State, action: Action): State => {
 const Login = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const loginButton = useRef<HTMLButtonElement>(null);
+  const buttonColor = useContext<string>(ColorContext);
   useEffect(() => {
     if (state.username.trim() && state.password.trim()) {
       dispatch({
@@ -132,7 +134,7 @@ const Login = () => {
       <Form.Group controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
-      <button ref = {loginButton} className="btn btn-primary" type="submit" onClick={handleLogin} disabled={true}>Login</button>
+      <button ref = {loginButton} className={`btn btn-${buttonColor}`} type="submit" onClick={handleLogin} disabled={true}>Login</button>
     </Form>
   );
 }

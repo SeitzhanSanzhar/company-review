@@ -1,7 +1,7 @@
 import React from "react";
 import './CompanyDetail.css';
 import CompanyData from "../../../models/Company";
-import {Link} from "react-router-dom";
+import {Link, Route} from "react-router-dom";
 import InterviewsList from "../../interviews/interviews-list/InterviewsList";
 
 interface IProps {
@@ -14,7 +14,6 @@ interface IState {
 class CompanyDetail extends React.Component<IProps, IState>{
 
   render () {
-    // const companyData = this.props.location;
     return (
       <div className="company-detail">
         <div className='company-image'>
@@ -30,7 +29,7 @@ class CompanyDetail extends React.Component<IProps, IState>{
           popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
           recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </div>
-        <Link to='interviews' component={InterviewsList}></Link>
+        <Link to='interviews' component={InterviewsList}/>
       </div>
     );
   }
