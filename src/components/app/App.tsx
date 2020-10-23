@@ -73,7 +73,8 @@ function App() {
           <ColorContext.Provider value = {'danger'}>
               <Switch>
                   <Route path='/companies' component={CompanyList} />
-                  <Route path='/company_detail' component={CompanyDetail} />
+                  <Route exact path='/company_detail' component={CompanyDetail} />
+                  <Route path='/company_detail/:id/' component={CompanyDetail} />
                   <Route path='/interviews' component={InterviewsPage} />
                   <Route exact path='/login' component={Login} />
                   <Route exact path='/' component={Login} />

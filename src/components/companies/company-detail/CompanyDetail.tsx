@@ -36,7 +36,7 @@ class CompanyDetail extends React.Component<IProps, IState>{
     // @ts-ignore
     const cdId = this.props.match.params.id;
     const companyInfo = this.state.companyDatas.filter((company) => {
-      return company.id == cdId;
+      return company.id === Number(cdId);
     })[0];
     return (
       <div className="company-detail">
