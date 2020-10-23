@@ -1,5 +1,5 @@
 import React from 'react';
-import { CompanyData } from "../../../models/CompanyData";
+import { CompanyData } from "../../../models/Company";
 
 
 interface IProps {

@@ -1,6 +1,6 @@
 import React from 'react';
 import CardDeck from "react-bootstrap/CardDeck";
-import { CompanyData } from "../../../models/CompanyData";
+import { CompanyData } from "../../../models/Company";
 import CompanyListItem from "../company-list-item/CompanyListItem";
 import './CompanyList.css';
 
@@ -59,22 +59,6 @@ class CompanyList extends React.Component<IProps, IState> {
           <div className="container">
             <h5 className="display-4">Company Reviews from Real Employees</h5>
             <h5 className="display-6">Discover how employees rate and review their company!</h5>
-            <div className="dropdown">
-              <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdown_coins" data-toggle="dropdown" aria-haspopup="true"
-                      aria-expanded="false">
-                Coin
-              </button>
-              <div className="dropdown show">
-                <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown link
-                </a>
-                <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a className="dropdown-item" href="#">Action</a>
-                  <a className="dropdown-item" href="#">Another action</a>
-                  <a className="dropdown-item" href="#">Something else here</a>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <b>Popular companies</b>

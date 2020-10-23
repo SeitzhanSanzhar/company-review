@@ -2,12 +2,12 @@ import React from 'react';
 import { Route, Switch } from "react-router";
 import { User } from "../../models/User";
 import CompanyList from '../companies/company-list/CompanyList';
-import HeaderLogged from "../header_logged/HeaderLogged";
-import Interviews from '../int/interviews/Interviews';
+import HeaderLogged from "../header/HeaderLogged";
+import InterviewsPage from '../interviews/interviews-page/InterviewsPage';
 import Login from "../login/Login";
 import Registration from "../register/Register";
+import ReviewList from '../reviews/reviews-list/ReviewList';
 import './App.css';
-
 
 const users: User[] = [];
 
@@ -23,7 +23,8 @@ function App() {
         <Route path='/' exact component={Login} />
         <Route path='/login' exact component={Login} />
         <Route path='/companies' component={CompanyList} />
-        <Route path='/interviews' component={Interviews} />
+        <Route path='/interviews' component={InterviewsPage} />
+        <Route path='/reviews' component={ReviewList} />
       </Switch>
     </div>
   );

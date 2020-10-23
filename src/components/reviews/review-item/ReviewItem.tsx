@@ -1,7 +1,7 @@
-import React, {ReactElement} from "react";
-import Card from "react-bootstrap/Card";
+import React, { ReactElement } from "react";
 import Button from "react-bootstrap/Button";
-import {Review} from "../../models/Review";
+import Card from "react-bootstrap/Card";
+import { Review } from "../../../models/Review";
 
 type ReviewProps = {
     review: Review;

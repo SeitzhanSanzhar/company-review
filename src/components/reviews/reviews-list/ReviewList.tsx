@@ -1,12 +1,8 @@
-import React, {ReactElement, useState} from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import ReviewItem from "../review_item/ReviewItem";
-import {Review} from "../../models/Review";
-import {CardGroup} from "react-bootstrap";
-import ReviewAdd from "../review_add/ReviewAdd";
-import './ReviewList.css'
-import {func} from "prop-types";
+import React, { ReactElement, useState } from "react";
+import { Review } from "../../../models/Review";
+import ReviewAdd from "../review-add/ReviewAdd";
+import ReviewItem from "../review-item/ReviewItem";
+import './ReviewList.css';
 
 type ReviewProps = {
 }
@@ -57,13 +53,7 @@ export default function ReviewList({}: ReviewProps): ReactElement {
                 <ReviewAdd addReview={addReview}/>
             </div>
             <div className="grid-item">
-
-                <ReviewItem review={reviews[0]}/>
-                <ReviewItem review={reviews[1]}/>
-                <ReviewItem review={reviews[2]}/>
-                <ReviewItem review={reviews[3]}/>
-                <ReviewItem review={reviews[4]}/>
-
+                {reviews.map((review) =>   <ReviewItem review={review}/>)}
             </div>
         </div>
 
