@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from "react-router";
 import { User } from "../../models/User";
-import CompanyList from '../company_list/CompanyList';
+import CompanyList from '../companies/company-list/CompanyList';
 import HeaderLogged from "../header_logged/HeaderLogged";
-import Interviews from '../interviews/Interviews';
+import Interviews from '../int/interviews/Interviews';
 import Login from "../login/Login";
 import Registration from "../register/Register";
 import './App.css';

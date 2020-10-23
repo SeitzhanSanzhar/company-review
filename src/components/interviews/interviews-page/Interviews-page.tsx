@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import InterviewAdd from '../interview-add/InterviewAdd';
+import InterviewAdd from '../../interview-add/InterviewAdd';
 import InterviewsList from '../interviews-list/InterviewsList';
 import './Interviews.css';
 
