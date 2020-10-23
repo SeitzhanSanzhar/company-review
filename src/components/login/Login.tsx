@@ -104,7 +104,6 @@ const Login = () => {
 
   const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> =
     (event) => {
-      console.log('something changed');
       dispatch({
         type: 'setUsername',
         payload: event.target.value
@@ -134,7 +133,8 @@ const Login = () => {
       <Form.Group controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
-      <button ref = {loginButton} className={`btn btn-${buttonColor}`} type="submit" onClick={handleLogin} disabled={true}>Login</button>
+      <button ref = {loginButton} className={`btn btn-${buttonColor}`} onClick={handleLogin} disabled={true}>Login</button>
+      <p className="text-muted">{state.helperText}</p>
     </Form>
   );
 }
