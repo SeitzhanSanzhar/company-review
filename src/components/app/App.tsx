@@ -29,10 +29,10 @@ const reviews: Review[] = [
     {
         companyName: "Kaspi",
         author: "Adlet",
-        review: "ne ponimau pochemu 6.5 milliardov stoit???",
+        review: "best company in Kazakhstan",
         id: 2,
         likes: 0,
-        comments: ["blah blah blaasdfadsfwergadfasdfasdfadfdfasdvqegqwef", "adfa;ldkfma;ldkm;aldskmfadf", "'adkf';lasdk;'zxckv;zlxckvz'"]
+        comments: ["comment 1", "comment 2", "comment 3"]
     },
     {
         companyName: "Amazon",
@@ -40,7 +40,7 @@ const reviews: Review[] = [
         review: "Bad work life balance low salary bad managers wanting to fire you",
         id: 3,
         likes: 0,
-        comments: ["Aaaaaaaaaaaaaaaaaa!!!!!!", "NOOOOOOOOOOOOOOOOOOOOOOOO"]
+        comments: ["Whyy?", "NOOOOOOOOOO"]
     },
     {
         companyName: "DAR",
@@ -48,7 +48,7 @@ const reviews: Review[] = [
         review: "not good bad work life balance low salary don't know why they write in Scala",
         id: 4,
         likes: 0,
-        comments: ["blah blah blah blah", "qweqweqwe"]
+        comments: ["asdasd", "qweqweqwe"]
     },
     {
         companyName: "ORION",
