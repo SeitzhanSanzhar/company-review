@@ -1,63 +1,31 @@
-import React, { ReactElement, useState } from "react";
+import React, {ReactElement, useContext, useState} from "react";
 import { Review } from "../../../models/Review";
 import ReviewAdd from "../review-add/ReviewAdd";
 import ReviewItem from "../review-item/ReviewItem";
 import './ReviewList.css';
+import ReviewContext from "../../../utils/ReviewContext";
 
 type ReviewProps = {
 }
 
-const reviews: Review[] = [
-    {
-        companyName: "DAR",
-        author: "Adilkhan",
-        review: "not good bad work life balance low salary don't know why they write in Scala",
-        id: 1,
-        likes: 0
-    },
-    {
-        companyName: "Kaspi",
-        author: "Adlet",
-        review: "blah blah blah blah blah blah blah blah blah blah blah blah ",
-        id: 2,
-        likes: 0
-    },
-    {
-        companyName: "Amazon",
-        author: "Sanzhar",
-        review: "not good bad work life balance low salary bad managers wanting to PEP you",
-        id: 3,
-        likes: 0
-    },
-    {
-        companyName: "DAR",
-        author: "Adilkhan",
-        review: "not good bad work life balance low salary don't know why they write in Scala",
-        id: 4,
-        likes: 0
-    },
-    {
-        companyName: "ORION",
-        author: "review by SANZHIK",
-        review: "ne prihodite suda",
-        id: 5,
-        likes: 0
-    }
-];
-
 export default function ReviewList({}: ReviewProps): ReactElement {
     const [number, setNumber] = useState(6);
+    const [a, setA] = useState(0);
+    const reviews = useContext<Review[]>(ReviewContext);
     return(
         <div className="grid-container">
             <div className="grid-item fill">
                 <ReviewAdd addReview={addReview}/>
             </div>
             <div className="grid-item">
-                {reviews.map((review) =>   <ReviewItem review={review}/>)}
+                {reviews.map((review) =>   <ReviewItem review={review} changeReviewLikes={changeReviewLikes}/>)}
             </div>
         </div>
 
     );
+    function changeReviewLikes(review: Review, likes: number) {
+        review.likes = likes;
+    }
 
     function addReview(review: Review) {
         review.id = number;
