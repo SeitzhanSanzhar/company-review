@@ -4,7 +4,8 @@ import ReviewAdd from "../review-add/ReviewAdd";
 import ReviewItem from "../review-item/ReviewItem";
 import ReviewContext from "../../../utils/ReviewContext";
 import {useRouteMatch} from "react-router";
-
+import {Card} from "react-bootstrap";
+import './ReviewView.css'
 type Props = {
 
 }
@@ -14,10 +15,22 @@ export default function ReviewView({}: Props): ReactElement {
     const [a, setA] = useState(0);
     const reviews = useContext<Review[]>(ReviewContext);
     const match = useRouteMatch<{id: string}>();
+    const thisReview = reviews.filter(r => r.id === Number(match.params.id))[0];
     return(
         <div>
             {match.params.id}
-            <ReviewItem review={reviews.filter(r => r.id === Number(match.params.id))[0]} changeReviewLikes={changeReviewLikes} isView={true}/>;
+            <ReviewItem review={thisReview} changeReviewLikes={changeReviewLikes} isView={true}/>
+            <div>
+                {thisReview.comments && thisReview.comments.map(comment =>
+                <div><Card className='grid-item'>
+                <Card.Header>author</Card.Header>
+                <Card.Body>
+                    {comment}
+                </Card.Body>
+                </Card>
+                </div>
+                )}
+            </div>
         </div>
     );
     function changeReviewLikes(review: Review, likes: number) {

@@ -20,37 +20,42 @@ const reviews: Review[] = [
     {
         companyName: "DAR",
         author: "Adilkhan",
-        review: "not good bad work life balance low salary don't know why they write in Scala",
+        review: "not good bad work life balance low salary",
         id: 1,
-        likes: 0
+        likes: 0,
+        comments: ["agree", "so TRUE"]
     },
     {
         companyName: "Kaspi",
         author: "Adlet",
         review: "blah blah blah blah blah blah blah blah blah blah blah blah ",
         id: 2,
-        likes: 0
+        likes: 0,
+        comments: ["blah blah blaasdfadsfwergadfasdfasdfadfdfasdvqegqwef", "adfa;ldkfma;ldkm;aldskmfadf", "'adkf';lasdk;'zxckv;zlxckvz'"]
     },
     {
         companyName: "Amazon",
         author: "Sanzhar",
-        review: "not good bad work life balance low salary bad managers wanting to PEP you",
+        review: "not good bad work life balance low salary bad managers wanting to fire you",
         id: 3,
-        likes: 0
+        likes: 0,
+        comments: ["Aaaaaaaaaaaaaaaaaa!!!!!!", "NOOOOOOOOOOOOOOOOOOOOOOOO"]
     },
     {
         companyName: "DAR",
         author: "Adilkhan",
         review: "not good bad work life balance low salary don't know why they write in Scala",
         id: 4,
-        likes: 0
+        likes: 0,
+        comments: ["blah blah blah blah", "qweqweqwe"]
     },
     {
         companyName: "ORION",
         author: "review by SANZHIK",
         review: "ne prihodite suda",
         id: 5,
-        likes: 0
+        likes: 0,
+        comments: ["blah blah blah blah", "qweqweqwe"]
     }
 ];
 
