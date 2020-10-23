@@ -25,6 +25,21 @@ export default function ReviewAdd({addReview}: Props): ReactElement {
             authorref.current.value = '';
             addReview(review);
         }
+        if (reviewref.current) {
+            if (!reviewref.current.value) {
+                reviewref.current.focus();
+            }
+        }
+        if (companyref.current) {
+            if (!companyref.current.value) {
+                companyref.current.focus();
+            }
+        }
+        if (authorref.current) {
+            if (!authorref.current.value) {
+                authorref.current.focus()
+            }
+        }
     }
     return(
         // eslint-disable-next-line react/jsx-no-undef
