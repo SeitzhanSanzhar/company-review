@@ -17,7 +17,7 @@ export default function ReviewItem({review, changeReviewLikes, isView}: ReviewPr
     });
 
     return(
-        <Card className='text-left m-5'>
+        <Card className='text-left m-2'>
             <Card.Header as="h5">{review.companyName}</Card.Header>
             <Card.Body>
                 <Card.Title>{review.author}</Card.Title>

@@ -17,7 +17,7 @@ export default function ReviewList({}: ReviewProps): ReactElement {
             <div className="grid-item fill">
                 <ReviewAdd addReview={addReview}/>
             </div>
-            <div className="grid-item">
+            <div className="grid-item-scroll">
                 {reviews.map((review) =>   <ReviewItem review={review} changeReviewLikes={changeReviewLikes}/>)}
             </div>
         </div>
