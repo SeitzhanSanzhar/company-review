@@ -119,8 +119,8 @@ const Login = () => {
   return (
     <Form className='login-form center_div'>
       <Form.Group controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="text" placeholder="Enter email" onChange={handleUsernameChange}/>
+        <Form.Label>Username</Form.Label>
+        <Form.Control type="text" placeholder="Enter username" onChange={handleUsernameChange}/>
         <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text>

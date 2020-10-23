@@ -28,7 +28,7 @@ export default function Registration({addUser}: Props): ReactElement {
         <Form className='register-form' onSubmit={handleSubmit}>
             <Form.Group controlId="formGroupUsername">
                 <Form.Label>Username</Form.Label>
-                <Form.Control type="email" placeholder="Enter username"  value={username} onChange={e => setUsername(e.target.value)}/>
+                <Form.Control type="text" placeholder="Enter username"  value={username} onChange={e => setUsername(e.target.value)}/>
             </Form.Group>
             <Form.Group controlId="formGroupEmail">
                 <Form.Label>Email address</Form.Label>
@@ -43,7 +43,18 @@ export default function Registration({addUser}: Props): ReactElement {
                 <Form.Control type="password" placeholder="Confirm Password" value={confirmpassword} onChange={e => setConfirmpassword(e.target.value)}/>
             </Form.Group>
             {/* eslint-disable-next-line react/jsx-no-undef */}
-            <Button variant="primary" type="submit">
+            {password !== confirmpassword &&
+            <div className="alert alert-danger" role="alert">
+                Password does not match password confirmation
+            </div>
+            }
+            {
+                password.length < 8 && password !== '' &&
+                <div className="alert alert-danger" role="alert">
+                    Password should have minimum eight characters
+                </div>
+            }
+            <Button variant="primary" type="submit" disabled={!(password === confirmpassword && password.length >= 8)}>
                 Register
             </Button>
         </Form>
