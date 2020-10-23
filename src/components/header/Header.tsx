@@ -28,8 +28,10 @@ const HeaderLogged = () => {
         </Nav>
         <Form inline>
           <input ref = {inputSearchRef} type="text" className="mr-sm-2" placeholder='Search'/>
-          <Button variant="outline-info" onClick={handleOnClickSearch}>Search</Button>
+          <Button variant="outline-info m-1" onClick={handleOnClickSearch}>Search</Button>
         </Form>
+        <Link to='/login'><Button variant="outline-info m-1">Log In</Button></Link>
+        <Link to='/register'><Button variant="outline-info m-1">Register</Button></Link>
       </Navbar>
     </>
   );

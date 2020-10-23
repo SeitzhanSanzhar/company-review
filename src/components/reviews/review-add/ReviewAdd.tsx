@@ -19,7 +19,13 @@ export default function ReviewAdd({addReview}: Props): ReactElement {
         if (companyref.current && reviewref.current &&
             companyref.current.value && reviewref.current.value &&
             authorref.current && authorref.current.value) {
-            const review: Review = {id:0,companyName: companyref.current.value, review: reviewref.current.value, likes: 0, author: 'todo'};
+            const review: Review = {
+                id:0,
+                companyName: companyref.current.value,
+                review: reviewref.current.value,
+                likes: 0,
+                author: authorref.current.value
+            };
             companyref.current.value = '';
             reviewref.current.value = '';
             authorref.current.value = '';
