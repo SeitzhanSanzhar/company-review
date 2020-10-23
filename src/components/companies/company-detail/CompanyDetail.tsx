@@ -1,8 +1,7 @@
 import React from "react";
-import './CompanyDetail.css';
+import { Link } from 'react-router-dom';
 import CompanyData from "../../../models/Company";
-import {Link, Route} from "react-router-dom";
-import InterviewsList from "../../interviews/interviews-list/InterviewsList";
+import './CompanyDetail.css';
 
 interface IProps  extends React.Props<any>{
   companyData: CompanyData;
