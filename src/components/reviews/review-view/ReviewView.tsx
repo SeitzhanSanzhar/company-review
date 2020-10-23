@@ -22,7 +22,7 @@ export default function ReviewView({}: Props): ReactElement {
             <ReviewItem review={thisReview} changeReviewLikes={changeReviewLikes} isView={true}/>
             <div>
                 {thisReview.comments && thisReview.comments.map(comment =>
-                <div><Card className='grid-item'>
+                <div><Card className='item'>
                 <Card.Header>author</Card.Header>
                 <Card.Body>
                     {comment}
