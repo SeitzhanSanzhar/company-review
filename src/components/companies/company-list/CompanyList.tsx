@@ -1,6 +1,6 @@
 import React from 'react';
 import CardDeck from "react-bootstrap/CardDeck";
-import { CompanyData } from "../../../models/Company";
+import { Company } from "../../../models/Company";
 import CompanyListItem from "../company-list-item/CompanyListItem";
 import './CompanyList.css';
 
@@ -10,7 +10,7 @@ interface IProps {}
 type IState = {
   rowSize: number,
   searchValue: string,
-  company_data: CompanyData[]
+  company_data: Company[]
 }
 
 class CompanyList extends React.Component<IProps, IState> {
@@ -42,7 +42,7 @@ class CompanyList extends React.Component<IProps, IState> {
   }
 
   render() {
-    let cardDecksOf3: Array<Array<CompanyData>> = [], currentDeck: CompanyData[] = [];
+    let cardDecksOf3: Array<Array<Company>> = [], currentDeck: Company[] = [];
     this.state.company_data.forEach((cd) => {
       console.log(currentDeck.length);
       currentDeck.push(cd);

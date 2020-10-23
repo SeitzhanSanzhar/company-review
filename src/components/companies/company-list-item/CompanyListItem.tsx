@@ -1,9 +1,9 @@
 import React from 'react';
-import { CompanyData } from "../../../models/Company";
+import { Company } from "../../../models/Company";
 
 
 interface IProps {
-  company_data: CompanyData;
+  company_data: Company;
 }
 
 interface IState {
