@@ -1,4 +1,4 @@
-import React, {ReactElement, useState} from "react";
+import React, {FormEvent, ReactElement, ReactEventHandler, useState} from "react";
 import {User} from "../../models/User";
 import {Form} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -14,13 +14,18 @@ export default function Registration({adduser}: Props): ReactElement {
     const [password, setPassword] = useState('');
     const [confirmpassword, setConfirmpassword] = useState('');
 
+    function handleSubmit(event: FormEvent<HTMLElement>):void {
+        const user: User = {username: username, email: email, password:password};
+        adduser(user);
+    }
+
     return (
         // eslint-disable-next-line react/jsx-no-undef
         <div>
-        <Form className='register-form'>
+        <Form className='register-form' onSubmit={handleSubmit}>
             <Form.Group controlId="formGroupUsername">
                 <Form.Label>Username</Form.Label>
-                <Form.Control type="email" placeholder="Enter username"  value={username} onChange={e => setUsername(e.target.value)}/>
+                <Form.Control type="text" placeholder="Enter username"  value={username} onChange={e => setUsername(e.target.value)}/>
             </Form.Group>
             <Form.Group controlId="formGroupEmail">
                 <Form.Label>Email address</Form.Label>
@@ -34,10 +39,21 @@ export default function Registration({adduser}: Props): ReactElement {
                 <Form.Label>Confirm Password</Form.Label>
                 <Form.Control type="password" placeholder="Confirm Password" value={confirmpassword} onChange={e => setConfirmpassword(e.target.value)}/>
             </Form.Group>
-            {/* eslint-disable-next-line react/jsx-no-undef */}
-            <Button variant="primary" type="submit">
+            {password !== confirmpassword &&
+                <div className="alert alert-danger" role="alert">
+                    Password does not match password confirmation
+                </div>
+            }
+            {
+                password.length < 8 && password !== '' &&
+                <div className="alert alert-danger" role="alert">
+                    password should have minimum eight characters
+                </div>
+            }
+            <Button variant="primary" type="submit" disabled={!(password === confirmpassword && password.length >= 8)}>
                 Register
             </Button>
+
         </Form>
         </div>
     );
