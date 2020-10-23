@@ -20,7 +20,7 @@ const reviews: Review[] = [
     {
         companyName: "DAR",
         author: "Adilkhan",
-        review: "not good bad work life balance low salary",
+        review: "Bad work life balance low salary",
         id: 1,
         likes: 0,
         comments: ["agree", "so TRUE"]
@@ -28,7 +28,7 @@ const reviews: Review[] = [
     {
         companyName: "Kaspi",
         author: "Adlet",
-        review: "blah blah blah blah blah blah blah blah blah blah blah blah ",
+        review: "ne ponimau pochemu 6.5 milliardov stoit???",
         id: 2,
         likes: 0,
         comments: ["blah blah blaasdfadsfwergadfasdfasdfadfdfasdvqegqwef", "adfa;ldkfma;ldkm;aldskmfadf", "'adkf';lasdk;'zxckv;zlxckvz'"]
@@ -36,7 +36,7 @@ const reviews: Review[] = [
     {
         companyName: "Amazon",
         author: "Sanzhar",
-        review: "not good bad work life balance low salary bad managers wanting to fire you",
+        review: "Bad work life balance low salary bad managers wanting to fire you",
         id: 3,
         likes: 0,
         comments: ["Aaaaaaaaaaaaaaaaaa!!!!!!", "NOOOOOOOOOOOOOOOOOOOOOOOO"]
@@ -55,7 +55,7 @@ const reviews: Review[] = [
         review: "ne prihodite suda",
         id: 5,
         likes: 0,
-        comments: ["blah blah blah blah", "qweqweqwe"]
+        comments: ["pochemu??", "ne och companiya"]
     }
 ];
 
@@ -77,6 +77,7 @@ function App() {
                   <Route exact path='/' component={Login} />
                   <Route exact path='/reviews/' component={ReviewList} />
                   <Route path='/reviews/:id/' component={ReviewView} />
+                  <Route exact path='/register' component={Registration}/>
               </Switch>
           </ColorContext.Provider>
           </ReviewContext.Provider>
