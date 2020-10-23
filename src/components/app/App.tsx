@@ -11,6 +11,8 @@ import './App.css';
 import ReviewContext from "../../utils/ReviewContext";
 import {Review} from "../../models/Review";
 import ReviewView from "../reviews/review-view/ReviewView";
+import CompanyDetail from "../companies/company-detail/CompanyDetail";
+import ColorContext from "../../utils/ColorContext";
 
 const users: User[] = [];
 
@@ -55,22 +57,25 @@ const reviews: Review[] = [
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Route path="/register">
-          <Registration addUser={addUser}/>
-      </Route>
-      <Switch>
-        <Route path='/' exact component={Login} />
-        <Route path='/login' exact component={Login} />
-        <Route path='/companies' component={CompanyList} />
-        <Route path='/interviews'  component={InterviewsPage} />
-        <ReviewContext.Provider value={reviews}>
-            <Route exact path='/reviews/' component={ReviewList} />
-            <Route path='/reviews/:id/' component={ReviewView} />
-        </ReviewContext.Provider>
-      </Switch>
-    </div>
+      <div className="App">
+          <Header/>
+          <Route path="/register">
+              <Registration addUser={addUser}/>
+          </Route>
+          <ReviewContext.Provider value={reviews}>
+          <ColorContext.Provider value = {'danger'}>
+              <Switch>
+                  <Route exact path='/companies' component={CompanyList} />
+                  <Route exact path='/company_detail' component={CompanyDetail} />
+                  <Route path='/interviews' component={InterviewsPage} />
+                  <Route exact path='/login' component={Login} />
+                  <Route exact path='/' component={Login} />
+                  <Route exact path='/reviews/' component={ReviewList} />
+                  <Route path='/reviews/:id/' component={ReviewView} />
+              </Switch>
+          </ColorContext.Provider>
+          </ReviewContext.Provider>
+      </div>
   );
   function addUser(user: User) {
     users.push(user);
