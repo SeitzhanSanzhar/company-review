@@ -9,18 +9,21 @@ type Props = {
 };
 
 export default function ReviewAdd({addReview}: Props): ReactElement {
-    const companyref = React.createRef<HTMLInputElement>();
-    const reviewref = React.createRef<HTMLTextAreaElement>();
+    const companyref = React.useRef<HTMLInputElement>(null);
+    const reviewref = React.useRef<HTMLTextAreaElement>(null);
 
     function handleSubmit(event: FormEvent<HTMLElement>):void {
-        if (companyref.current && reviewref.current && companyref.current.textContent && reviewref.current.textContent) {
-            const review: Review = {id:0,companyName: companyref.current.textContent, review: reviewref.current.textContent, likes: 0, author: 'todo'};
+        console.log('qwerqwerqwerqe');
+        if (companyref.current && reviewref.current && companyref.current.value && reviewref.current.value) {
+            const review: Review = {id:0,companyName: companyref.current.value, review: reviewref.current.value, likes: 0, author: 'todo'};
+            companyref.current.value = '';
+            reviewref.current.value = '';
             addReview(review);
         }
     }
     return(
         // eslint-disable-next-line react/jsx-no-undef
-        <Form onSubmit={handleSubmit}>
+        <Form>
             <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label>Company</Form.Label>
                 <Form.Control type="text" placeholder="Company" ref={companyref}/>
@@ -28,9 +31,9 @@ export default function ReviewAdd({addReview}: Props): ReactElement {
 
             <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Review</Form.Label>
-                <Form.Control as="textarea" rows={10} ref={reviewref}/>
+                <Form.Control as="textarea" rows={10} placeholder="Review" ref={reviewref}/>
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" onClick={handleSubmit}>
                 Send Review
             </Button>
         </Form>
