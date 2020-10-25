@@ -1,5 +1,5 @@
 import React from 'react';
-import interviews from '../../../data/InterviewJson';
+import interviews from '../../../data/InterviewData';
 import InterviewsList from '../interviews-list/InterviewsList';
 
 interface IProps {

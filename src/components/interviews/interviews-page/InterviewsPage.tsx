@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import InterviewContext from '../../../contexts/InterviewContext';
-import interviews from '../../../data/InterviewJson';
+import interviews from '../../../data/InterviewData';
 import { Interview } from '../../../models/Interview';
 import InterviewAdd from '../interview-add/InterviewAdd';
 import InterviewsList from '../interviews-list/InterviewsList';

@@ -26,7 +26,7 @@ export default function InterviewDetails({}: Props): ReactElement {
                         Updates are coming soon! Subscribe to keep updated
                     </Card.Text>
                     <hr/>
-                    <input className="subsribe-input" type="" value="Submit" id="input-subscribe" onClick={showMessage}/>
+                    <input className="subsribe-input" type="" value="Subscribe" id="input-subscribe" onClick={showMessage}/>
                     <p ref={showMessageRef} className="message">We'll email you when updates are available!</p>
                 </Card.Body>
             </Card>

@@ -1,13 +1,10 @@
 import React from 'react';
 import CardDeck from "react-bootstrap/CardDeck";
-import CompanyData  from "../../../models/Company";
+import getCompanyData from '../../../data/CompanyData';
+import WithLoggerHOC from '../../../hoc/withLoggerHOC';
+import CompanyData from "../../../models/Company";
 import CompanyListItem from "../company-list-item/CompanyListItem";
 import './CompanyList.css';
-import Company from "../../../models/Company";
-import {type} from "os";
-import CompanyDetail from "../company-detail/CompanyDetail";
-import getCompanyData from '../../../data/CompanyJson';
-import WithLoggerHOC from '../../../hoc/withLoggerHOC';
 
 interface IProps {}
 type IState = {
