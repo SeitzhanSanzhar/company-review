@@ -33,6 +33,22 @@ const interviews: Interview[] = [
     verdict: "Offer",
     companyName: "OneTechnology",
   },
+  {
+    id: 5,
+    topic: "Stripe phone interview",
+    author: "Adilet",
+    text: "I had two phone interviews at Facebook London for an internship. There were total of 4 problems and a behavioral interview. Overall this was a great experience",
+    verdict: "Offer",
+    companyName: "Stripe",
+  },
+  {
+    id: 6,
+    topic: "Apple phone interview",
+    author: "Adilet",
+    text: "I had two phone interviews at Facebook London for an internship. There were total of 4 problems and a behavioral interview. Overall this was a great experience",
+    verdict: "Offer",
+    companyName: "Apple",
+  },
 ];
 
 export default interviews;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import CompanyData from "../../../models/Company";
 import './CompanyDetail.css';
 import getCompanyData from '../../../data/CompanyJson';
@@ -27,7 +27,7 @@ class CompanyDetail extends React.Component<IProps, IState>{
     const companyInfo = this.state.companyDatas.filter((company) => {
       return company.id === Number(cdId);
     })[0];
-    const linkToCompanyInterviews = `interviews_company/${companyInfo.name}`;
+    const linkToCompanyInterviews = `interviews_company/Google`;
     return (
       <div>
         <div className="company-detail">
@@ -40,7 +40,7 @@ class CompanyDetail extends React.Component<IProps, IState>{
             {companyInfo.text}
           </div>
         </div>
-        <Link to={`/interviews_company/${companyInfo.name}`} component={InterviewsPageCompany}/>
+        <InterviewsPageCompany companyName={companyInfo.name}/>
       </div>
     );
   }
