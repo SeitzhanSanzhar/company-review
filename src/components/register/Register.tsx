@@ -43,10 +43,11 @@ export default function Registration({addUser}: Props): ReactElement {
                 <Form.Control type="password" placeholder="Confirm Password" value={confirmpassword} onChange={e => setConfirmpassword(e.target.value)}/>
             </Form.Group>
             {/* eslint-disable-next-line react/jsx-no-undef */}
-            {password !== confirmpassword &&
-            <div className="alert alert-danger" role="alert">
-                Password does not match password confirmation
-            </div>
+            {
+                password !== confirmpassword &&
+                <div className="alert alert-danger" role="alert">
+                    Password does not match password confirmation
+                </div>
             }
             {
                 password.length < 8 && password !== '' &&

@@ -10,8 +10,6 @@ type Props = {
 }
 
 export default function ReviewView({}: Props): ReactElement {
-    const [number, setNumber] = useState(6);
-    const [a, setA] = useState(0);
     const reviews = useContext<Review[]>(ReviewContext);
     const match = useRouteMatch<{id: string}>();
     const thisReview = reviews.filter(r => r.id === Number(match.params.id))[0];
@@ -36,9 +34,4 @@ export default function ReviewView({}: Props): ReactElement {
         review.likes = likes;
     }
 
-    function addReview(review: Review) {
-        review.id = number;
-        reviews.push(review);
-        setNumber(number + 1);
-    }
 }

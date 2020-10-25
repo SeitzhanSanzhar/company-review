@@ -21,7 +21,6 @@ export default function ReviewList({}: ReviewProps): ReactElement {
                 {reviews.map((review) =>   <ReviewItem review={review} changeReviewLikes={changeReviewLikes}/>)}
             </div>
         </div>
-
     );
     function changeReviewLikes(review: Review, likes: number) {
         review.likes = likes;
