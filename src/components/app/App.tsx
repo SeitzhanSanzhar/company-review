@@ -8,6 +8,7 @@ import { User } from "../../models/User";
 import CompanyDetail from "../companies/company-detail/CompanyDetail";
 import CompanyList from '../companies/company-list/CompanyList';
 import Header from "../header/Header";
+import InterviewDetails from '../interviews/interview-details/InterviewDetails';
 import InterviewsPage from '../interviews/interviews-page/InterviewsPage';
 import Login from "../login/Login";
 import Registration from "../register/Register";
@@ -73,8 +74,9 @@ function App() {
           <ColorContext.Provider value = {'danger'}>
               <Switch>
                   <Route path='/companies' component={CompanyList} />
-                  <Route path='/company_detail/:id/' component={CompanyDetail} />
-                  <Route path='/interviews' component={InterviewsPage} />
+                  <Route path='/company-detail/:id/' component={CompanyDetail} />
+                  <Route exact path='/interviews' component={InterviewsPage} />
+                  <Route path='/interviews/:id/' component={InterviewDetails} />
                   <Route exact path='/login' component={Login} />
                   <Route exact path='/' component={Login} />
                   <Route exact path='/reviews/' component={ReviewList} />

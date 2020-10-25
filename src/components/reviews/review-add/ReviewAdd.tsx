@@ -2,6 +2,7 @@ import React, { FormEvent, ReactElement } from "react";
 import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { Review } from "../../../models/Review";
+import "./ReviewAdd.css";
 
 type Props = {
     addReview: (review: Review) => void
@@ -62,7 +63,7 @@ export default function ReviewAdd({addReview}: Props): ReactElement {
                 <Form.Label>Review</Form.Label>
                 <Form.Control as="textarea" rows={10} placeholder="Review" ref={reviewref}/>
             </Form.Group>
-            <Button variant="primary" onClick={handleSubmit}>
+            <Button className="send-review" variant="primary" onClick={handleSubmit}>
                 Send Review
             </Button>
         </Form>

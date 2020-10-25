@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import InterviewContext from '../../../contexts/InterviewContext';
 import { Interview } from '../../../models/Interview';
 import InterviewAdd from '../interview-add/InterviewAdd';
 import InterviewsList from '../interviews-list/InterviewsList';
@@ -23,7 +24,7 @@ const interviews: Interview[] = [
         id: 2,
         topic: "Phone call with Jane Street",
         author: "Jose",
-        text: "There was only one problem with follow ups, you have to perform perfect to advance futher",
+        text: "There was one problem with follow ups, you have to perform perfect to advance further",
         verdict: "Reject"
     },
     {
@@ -87,6 +88,7 @@ export default class InterviewsNavbar extends Component<Props, State> {
 
     render() {  
         return (
+            <InterviewContext.Provider value={interviews}>
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -106,6 +108,7 @@ export default class InterviewsNavbar extends Component<Props, State> {
 
                 {this.state.showDiscover ? <InterviewsList interviews={interviews}/> : <InterviewAdd addInterview={this.addInterview}/>}
             </div>
+            </InterviewContext.Provider>
         );
     }
 }

@@ -1,0 +1,39 @@
+.card-details {
+    width: 50%;
+}
+
+.subscribe-input {
+   background: #f1f1f1;
+   border: 1px solid #5bc0eb; outline:0;
+   padding: 1em;
+   border-radius: 8px; 
+   width: 25%;
+   margin-top: 1em;
+   font-family: sans-serif;
+}
+
+#input-subscribe {
+    color: white; 
+    caret-color: transparent;
+    font-size: larger;
+    border: 1px solid #5bc0eb;
+    background: #5bc0eb;
+    border-radius: 8px; 
+    cursor: pointer;
+    width: 25%;
+    height: 40px;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+ }
+
+ .message {
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 160px;
+    color: white
+ }
+
+ .visible-message {
+     color: gray;
+ }
