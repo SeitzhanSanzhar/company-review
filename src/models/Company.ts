@@ -1,4 +1,4 @@
-export default interface CompanyData {
+export default interface ICompany {
   id: number,
   name: string,
   rating: number,

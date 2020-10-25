@@ -10,7 +10,7 @@ interface Props {
 export default function InterviewAdd({ addInterview }: Props): ReactElement {
     const username = useContext<string>(UserContext);
     
-    let interview: Interview = { id: 0, topic: '', verdict: '', text: '', author: username };
+    let interview: Interview = { id: 0, topic: '', verdict: '', text: '', author: username, companyName: '' };
     
     useEffect(() => {
         document.title = "Add an interview";
