@@ -17,7 +17,6 @@ export default function ReviewView({}: Props): ReactElement {
     const thisReview = reviews.filter(r => r.id === Number(match.params.id))[0];
     return(
         <div>
-            {match.params.id}
             <ReviewItem review={thisReview} changeReviewLikes={changeReviewLikes} isView={true}/>
             <div>
                 {thisReview.comments && thisReview.comments.map(comment =>

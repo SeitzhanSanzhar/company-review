@@ -15,6 +15,7 @@ import Registration from "../register/Register";
 import ReviewView from "../reviews/review-view/ReviewView";
 import ReviewList from '../reviews/reviews-list/ReviewList';
 import './App.css';
+import InterviewsPageCompany from '../interviews/interviews-page-company/InterviewsPageCompany';
 
 const users: User[] = [];
 
@@ -81,6 +82,7 @@ function App() {
                   <Route exact path='/' component={Login} />
                   <Route exact path='/reviews/' component={ReviewList} />
                   <Route path='/reviews/:id/' component={ReviewView} />
+                  <Route path='/interviews_company/:companyName/' component={InterviewsPageCompany} />
               </Switch>
           </ColorContext.Provider>
           </ReviewContext.Provider>

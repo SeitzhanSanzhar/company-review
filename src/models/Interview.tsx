@@ -4,4 +4,5 @@ export interface Interview {
     topic: string;
     text: string;
     verdict: string;
+    companyName: string;
 }
