@@ -77,16 +77,18 @@ const Login = () => {
   }, [state.username, state.password]);
 
   const handleLogin = () => {
-    if (state.username === 'abc@email.com' && state.password === 'password') {
+    if (state.username === 'admin' && state.password === '123qweasd') {
       dispatch({
         type: 'loginSuccess',
         payload: 'Login Successfully'
       });
+      alert ('success');
     } else {
       dispatch({
         type: 'loginFailed',
         payload: 'Incorrect username or password'
       });
+      alert ('fail');
     }
   };
 
@@ -117,24 +119,25 @@ const Login = () => {
       });
     }
   return (
-    <Form className='login-form center_div'>
-      <Form.Group controlId="formBasicEmail">
-        <Form.Label>Username</Form.Label>
-        <Form.Control type="text" placeholder="Enter username" onChange={handleUsernameChange}/>
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-      <Form.Group controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" onChange={handlePasswordChange}/>
-      </Form.Group>
-      <Form.Group controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <button ref = {loginButton} className={`btn btn-${buttonColor}`} onClick={handleLogin} disabled={true}>Login</button>
-      <p className="text-muted">{state.helperText}</p>
-    </Form>
+    <form onSubmit={handleLogin} className='login-form center_div'>
+      <Form>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Username</Form.Label>
+          <Form.Control type="text" placeholder="Enter username" onChange={handleUsernameChange}/>
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" onChange={handlePasswordChange}/>
+        </Form.Group>
+        <Form.Group controlId="formBasicCheckbox">
+          <Form.Check type="checkbox" label="Check me out" />
+        </Form.Group>
+      </Form>
+      <button type='submit' ref = {loginButton} className={`btn btn-${buttonColor}`} onClick={handleLogin} disabled={true}>Login</button>
+    </form>
   );
 }
 

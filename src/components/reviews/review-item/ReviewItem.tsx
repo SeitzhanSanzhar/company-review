@@ -32,7 +32,7 @@ export default function ReviewItem({review, changeReviewLikes, isView}: ReviewPr
                 <Button className="like" variant="success m-2" onClick={() => setlikes(likes + 1)}>Like</Button>
                 <Button className="dislike" variant="danger m-2" onClick={() => setlikes(likes - 1)}>Dislike</Button>
                 {isView &&
-                <Link to={`/reviews`}><Button variant="primary m-2">Back</Button></Link>
+                <Link to='/reviews'><Button className="view-post" variant="primary m-2">Back</Button></Link>
                 }
             </Card.Body>
             <div></div>

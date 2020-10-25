@@ -1,5 +1,5 @@
 import React from 'react';
 
-const InterviewContext = React.createContext<string>('username');
+const UserContext = React.createContext<string>('username');
 
-export default InterviewContext;
+export default UserContext;
