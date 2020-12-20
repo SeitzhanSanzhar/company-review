@@ -5,8 +5,6 @@ import ReviewContext from "../../contexts/ReviewContext";
 import UserContext from '../../contexts/UserContext';
 import { Review } from "../../models/Review";
 import { User } from "../../models/User";
-import CompanyDetail from "../companies/company-detail/CompanyDetail";
-import CompanyList from '../companies/company-list/CompanyList';
 import Header from "../header/Header";
 import InterviewDetails from '../interviews/interview-details/InterviewDetails';
 import InterviewsPage from '../interviews/interviews-page/InterviewsPage';
@@ -16,6 +14,9 @@ import ReviewView from "../reviews/review-view/ReviewView";
 import ReviewList from '../reviews/reviews-list/ReviewList';
 import './App.css';
 import InterviewsPageCompany from '../interviews/interviews-page-company/InterviewsPageCompany';
+
+const CompanyDetail = React.lazy(() => import('../companies/company-detail/CompanyDetail'));
+const CompanyList = React.lazy(() => import('../companies/company-list/CompanyList'));
 
 const users: User[] = [];
 
@@ -74,8 +75,6 @@ function App() {
           <ReviewContext.Provider value={reviews}>
           <ColorContext.Provider value = {'danger'}>
               <Switch>
-                  <Route path='/companies' component={CompanyList} />
-                  <Route path='/company-detail/:id/' component={CompanyDetail} />
                   <Route exact path='/interviews' component={InterviewsPage} />
                   <Route path='/interviews/:id/' component={InterviewDetails} />
                   <Route exact path='/login' component={Login} />
@@ -84,6 +83,10 @@ function App() {
                   <Route path='/reviews/:id/' component={ReviewView} />
                   <Route path='/interviews_company/:companyName/' component={InterviewsPageCompany} />
               </Switch>
+              <React.Suspense fallback={<div>Loading</div>}>
+                <Route path='/company-detail/:id/' component={CompanyDetail} />
+                <Route path='/companies' component={CompanyList} />
+              </React.Suspense>
           </ColorContext.Provider>
           </ReviewContext.Provider>
           </UserContext.Provider>

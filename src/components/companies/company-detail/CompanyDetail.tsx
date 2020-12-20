@@ -3,6 +3,8 @@ import getCompanyData from '../../../data/CompanyData';
 import CompanyData from "../../../models/Company";
 import InterviewsPageCompany from "../../interviews/interviews-page-company/InterviewsPageCompany";
 import './CompanyDetail.css';
+import axios from 'axios';
+
 
 interface IProps  extends React.Props<any>{
   companyData: CompanyData;
@@ -19,6 +21,13 @@ class CompanyDetail extends React.Component<IProps, IState>{
     this.state = {
       companyDatas: getCompanyData()
     }
+    axios.get('https://drive.google.com/file/d/1l8SVNCd92-MsfuJaRGdbsD7nExRBofd2/view?usp=sharing')
+      .then((res) => {
+        this.state = {
+          companyDatas: res.data
+        }
+        console.log('here');
+      })
   }
 
   render () {
