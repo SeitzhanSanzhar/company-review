@@ -23,7 +23,8 @@ export default function ReviewAdd({addReview}: Props): ReactElement {
                 companyName: companyref.current.value,
                 review: reviewref.current.value,
                 likes: 0,
-                author: authorref.current.value
+                author: authorref.current.value,
+                isLiked: false
             };
             companyref.current.value = '';
             reviewref.current.value = '';

@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext, useState } from "react";
+import React, {ReactElement, useCallback, useContext, useState} from "react";
 import ReviewContext from "../../../contexts/ReviewContext";
 import { Review } from "../../../models/Review";
 import ReviewAdd from "../review-add/ReviewAdd";
@@ -13,10 +13,18 @@ export default function ReviewList({}: ReviewProps): ReactElement {
     const [a, setA] = useState(0);
     const reviews = useContext<Review[]>(ReviewContext);
 
-    function changeReviewLikes(review: Review, likes: number) {
+    const changeReviewLikes = useCallback((review: Review, likes: number, isLiked: boolean) => {
         console.log(likes);
         review.likes = likes;
-    }
+        review.isLiked = isLiked;
+    }, []);
+
+    const addReview = useCallback((review: Review) => {
+        review.id = number;
+        reviews.push(review);
+        setNumber(number + 1);
+    }, []);
+
     return(
         <div className="grid-container">
             <div className="grid-item fill">
@@ -30,9 +38,4 @@ export default function ReviewList({}: ReviewProps): ReactElement {
         </div>
     );
 
-    function addReview(review: Review) {
-        review.id = number;
-        reviews.push(review);
-        setNumber(number + 1);
-    }
 }
