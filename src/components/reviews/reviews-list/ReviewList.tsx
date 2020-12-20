@@ -12,19 +12,23 @@ export default function ReviewList({}: ReviewProps): ReactElement {
     const [number, setNumber] = useState(6);
     const [a, setA] = useState(0);
     const reviews = useContext<Review[]>(ReviewContext);
+
+    function changeReviewLikes(review: Review, likes: number) {
+        console.log(likes);
+        review.likes = likes;
+    }
     return(
         <div className="grid-container">
             <div className="grid-item fill">
                 <ReviewAdd addReview={addReview}/>
             </div>
             <div className="grid-item-scroll">
-                {reviews.map((review) =>   <ReviewItem review={review} changeReviewLikes={changeReviewLikes}/>)}
+                <React.Fragment>
+                {reviews.map((review) => <ReviewItem review={review} changeReviewLikes={changeReviewLikes}/>)}
+                </React.Fragment>
             </div>
         </div>
     );
-    function changeReviewLikes(review: Review, likes: number) {
-        review.likes = likes;
-    }
 
     function addReview(review: Review) {
         review.id = number;

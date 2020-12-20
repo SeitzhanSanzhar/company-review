@@ -6,17 +6,17 @@ import UserContext from '../../contexts/UserContext';
 import { Review } from "../../models/Review";
 import { User } from "../../models/User";
 import Header from "../header/Header";
-import InterviewDetails from '../interviews/interview-details/InterviewDetails';
-import InterviewsPage from '../interviews/interviews-page/InterviewsPage';
-import Login from "../login/Login";
 import Registration from "../register/Register";
-import ReviewView from "../reviews/review-view/ReviewView";
-import ReviewList from '../reviews/reviews-list/ReviewList';
 import './App.css';
 import InterviewsPageCompany from '../interviews/interviews-page-company/InterviewsPageCompany';
 
 const CompanyDetail = React.lazy(() => import('../companies/company-detail/CompanyDetail'));
 const CompanyList = React.lazy(() => import('../companies/company-list/CompanyList'));
+const ReviewView = React.lazy(() => import("../reviews/review-view/ReviewView"));
+const ReviewList = React.lazy(() => import('../reviews/reviews-list/ReviewList'));
+const InterviewDetails = React.lazy(() => import('../interviews/interview-details/InterviewDetails'));
+const InterviewsPage = React.lazy(() => import('../interviews/interviews-page/InterviewsPage'));
+const Login = React.lazy(() => import("../login/Login"));
 
 const users: User[] = [];
 
@@ -74,6 +74,7 @@ function App() {
           <UserContext.Provider value={'Alikhan'}>
           <ReviewContext.Provider value={reviews}>
           <ColorContext.Provider value = {'danger'}>
+              <React.Suspense fallback={<div>Loading</div>}>
               <Switch>
                   <Route exact path='/interviews' component={InterviewsPage} />
                   <Route path='/interviews/:id/' component={InterviewDetails} />
@@ -82,10 +83,10 @@ function App() {
                   <Route exact path='/reviews/' component={ReviewList} />
                   <Route path='/reviews/:id/' component={ReviewView} />
                   <Route path='/interviews_company/:companyName/' component={InterviewsPageCompany} />
+                  <Route path='/reviews/:id/' component={ReviewView} />
+                  <Route path='/company-detail/:id/' component={CompanyDetail} />
+                  <Route path='/companies' component={CompanyList} />
               </Switch>
-              <React.Suspense fallback={<div>Loading</div>}>
-                <Route path='/company-detail/:id/' component={CompanyDetail} />
-                <Route path='/companies' component={CompanyList} />
               </React.Suspense>
           </ColorContext.Provider>
           </ReviewContext.Provider>

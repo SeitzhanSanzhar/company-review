@@ -15,7 +15,6 @@ export default function ReviewAdd({addReview}: Props): ReactElement {
     const reviewref = React.useRef<HTMLTextAreaElement>(null);
 
     function handleSubmit(event: FormEvent<HTMLElement>):void {
-        console.log('qwerqwerqwerqe');
         if (companyref.current && reviewref.current &&
             companyref.current.value && reviewref.current.value &&
             authorref.current && authorref.current.value) {
@@ -51,9 +50,9 @@ export default function ReviewAdd({addReview}: Props): ReactElement {
         // eslint-disable-next-line react/jsx-no-undef
         <Form>
             <Form.Group>
-            <Form.Label>Author</Form.Label>
-            <Form.Control type="text" placeholder="Author" ref={authorref}/>
-        </Form.Group>
+                <Form.Label>Author</Form.Label>
+                <Form.Control type="text" placeholder="Author" ref={authorref}/>
+            </Form.Group>
             <Form.Group>
                 <Form.Label>Company</Form.Label>
                 <Form.Control type="text" placeholder="Company" ref={companyref}/>

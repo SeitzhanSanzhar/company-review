@@ -17,15 +17,14 @@ export default function ReviewView({}: Props): ReactElement {
         <div>
             <ReviewItem review={thisReview} changeReviewLikes={changeReviewLikes} isView={true}/>
             <div>
-                {thisReview.comments && thisReview.comments.map(comment =>
-                <div><Card className='item'>
-                <Card.Header>author</Card.Header>
-                <Card.Body>
-                    {comment}
-                </Card.Body>
-                </Card>
-                </div>
-                )}
+                {thisReview.comments && thisReview.comments.map(comment => (
+                    <React.Fragment>
+                        <Card className='item'>
+                        <Card.Header>author</Card.Header>
+                        <Card.Body>comment</Card.Body>
+                        </Card>
+                    </React.Fragment>
+                ))}
             </div>
         </div>
     );
