@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Profiler} from 'react';
 import { Route, Switch } from "react-router";
 import ColorContext from "../../contexts/ColorContext";
 import ReviewContext from "../../contexts/ReviewContext";
@@ -70,8 +70,29 @@ const reviews: Review[] = [
 
 
 function App() {
+    function onRenderCallback(
+        id: string, // проп "id" из дерева компонента Profiler, для которого было зафиксировано изменение
+        phase :  "mount" | "update", // либо "mount" (если дерево было смонтировано), либо "update" (если дерево было повторно отрендерено)
+        actualDuration : number, // время, затраченное на рендер зафиксированного обновления
+        baseDuration: number, // предполагаемое время рендера всего поддерева без кеширования
+        startTime: number, // когда React начал рендерить это обновление
+        commitTime: number, // когда React зафиксировал это обновление
+        interactions: any // Множество «взаимодействий» для данного обновления
+    ) {
+        const performanceData = [
+            `id: ${id}`,
+            `phase: ${phase}`,
+            `actualDuration: ${actualDuration}`,
+            `baseDuration: ${baseDuration}`,
+            `startTime: ${startTime}`,
+            `commitTime: ${commitTime}`,
+            `interactions: ${JSON.stringify([...interactions])}`
+        ].join("\n");
+        console.log(performanceData);
+    }
   return (
       <div className="App">
+          <Profiler id="Panel" onRender={onRenderCallback}>
           <Header/>
           <Route path="/register">
               <Registration addUser={addUser}/>
@@ -96,6 +117,7 @@ function App() {
           </ColorContext.Provider>
           </ReviewContext.Provider>
           </UserContext.Provider>
+          </Profiler>
       </div>
   );
   function addUser(user: User) {
