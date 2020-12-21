@@ -1,11 +1,11 @@
 import React from 'react';
+import { CardDeck } from "react-bootstrap";
 import getCompanyData from '../../../data/CompanyData';
 import WithLoggerHOC from '../../../hoc/withLoggerHOC';
 import CompanyData from "../../../models/Company";
 import CompanyListItem from "../company-list-item/CompanyListItem";
-import './CompanyList.css';
 import ErrorBoundary from '../error_boundary';
-import {CardDeck} from "react-bootstrap";
+import './CompanyList.css';
 
 interface IProps {}
 type IState = {

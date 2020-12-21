@@ -1,4 +1,4 @@
-import React, {Profiler} from 'react';
+import React, { Profiler } from 'react';
 import { Route, Switch } from "react-router";
 import ColorContext from "../../contexts/ColorContext";
 import ReviewContext from "../../contexts/ReviewContext";
@@ -6,9 +6,9 @@ import UserContext from '../../contexts/UserContext';
 import { Review } from "../../models/Review";
 import { User } from "../../models/User";
 import Header from "../header/Header";
+import InterviewsPageCompany from '../interviews/interviews-page-company/InterviewsPageCompany';
 import Registration from "../register/Register";
 import './App.css';
-import InterviewsPageCompany from '../interviews/interviews-page-company/InterviewsPageCompany';
 
 const CompanyDetail = React.lazy(() => import('../companies/company-detail/CompanyDetail'));
 const CompanyList = React.lazy(() => import('../companies/company-list/CompanyList'));
@@ -100,7 +100,7 @@ function App() {
           <UserContext.Provider value={'Alikhan'}>
           <ReviewContext.Provider value={reviews}>
           <ColorContext.Provider value = {'danger'}>
-              <React.Suspense fallback={<div>Loading</div>}>
+              <React.Suspense fallback={<div>Loading...</div>}>
               <Switch>
                   <Route exact path='/interviews' component={InterviewsPage} />
                   <Route path='/interviews/:id/' component={InterviewDetails} />
