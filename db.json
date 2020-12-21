@@ -1,0 +1,95 @@
+{
+  "reviews": [
+    {
+      "companyName": "DAR",
+      "author": "Adilkhan",
+      "review": "Bad work life balance low salary",
+      "id": 1,
+      "likes": 12,
+      "comments": [
+        "agree",
+        "so TRUE"
+      ],
+      "isLiked": false
+    },
+    {
+      "companyName": "Kaspi",
+      "author": "Adlet",
+      "review": "best company in Kazakhstan",
+      "id": 2,
+      "comments": [
+        "comment 1",
+        "comment 2",
+        "comment 3"
+      ],
+      "likes": 12,
+      "isLiked": true
+    },
+    {
+      "companyName": "Amazon",
+      "author": "Sanzhar",
+      "review": "Bad work life balance low salary bad managers wanting to fire you",
+      "id": 3,
+      "comments": [
+        "Whyy?",
+        "NOOOOOOOOOO"
+      ]
+    },
+    {
+      "companyName": "DAR",
+      "author": "Adilkhan",
+      "review": "not good bad work life balance low salary don't know why they write in Scala",
+      "id": 4,
+      "likes": 11,
+      "comments": [
+        "asdasd",
+        "qweqweqwe"
+      ],
+      "isLiked": false
+    },
+    {
+      "companyName": "ORION",
+      "author": "review by SANZHIK",
+      "review": "ne prihodite suda",
+      "id": 5,
+      "likes": 0,
+      "comments": [
+        "pochemu??",
+        "ne och companiya"
+      ],
+      "isLiked": false
+    },
+    {
+      "id": 6,
+      "companyName": "new test",
+      "review": "new test",
+      "likes": 0,
+      "author": "new test",
+      "isLiked": false
+    },
+    {
+      "id": 7,
+      "companyName": "new 2 test",
+      "review": "new 2 test",
+      "likes": 0,
+      "author": "new 2 test",
+      "isLiked": false
+    },
+    {
+      "id": 8,
+      "companyName": "news 3 tet",
+      "review": "qwerqweadf",
+      "likes": 0,
+      "author": "neww 3 test",
+      "isLiked": false
+    },
+    {
+      "id": 9,
+      "companyName": "asdfasdfa",
+      "review": "adfadsfasdf",
+      "likes": 0,
+      "author": "asdfasdf",
+      "isLiked": false
+    }
+  ]
+}

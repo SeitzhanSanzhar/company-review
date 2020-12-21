@@ -1,23 +1,51 @@
-import React, { ReactElement, useContext, useState } from "react";
+import React, {ReactElement, useCallback, useContext, useEffect, useState} from "react";
 import { Card } from "react-bootstrap";
 import { useRouteMatch } from "react-router";
 import ReviewContext from "../../../contexts/ReviewContext";
 import { Review } from "../../../models/Review";
 import ReviewItem from "../review-item/ReviewItem";
 import './ReviewView.css';
+import axios from "../../../api/axios";
 type Props = {
 
 }
 
 export default function ReviewView({}: Props): ReactElement {
-    const reviews = useContext<Review[]>(ReviewContext);
+    // const reviews = useContext<Review[]>(ReviewContext);
     const match = useRouteMatch<{id: string}>();
-    const thisReview = reviews.filter(r => r.id === Number(match.params.id))[0];
+    const [review, setReview] = useState({} as Review);
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const result = await axios.get(`/reviews/${match.params.id}`);
+                const data: Review = result["data"];
+                setReview(data);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        fetchData();
+    }, []);
+
+    const changeReviewLikes = useCallback((review: Review, likes: number, isLiked: boolean) => {
+
+        console.log(likes);
+        review.likes = likes;
+        review.isLiked = isLiked;
+        axios.put(`/reviews/${review.id}`, review)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }, []);
     return(
         <div>
-            <ReviewItem review={thisReview} changeReviewLikes={changeReviewLikes} isView={true}/>
+            {String(review.likes)}
+            <ReviewItem review={review} changeReviewLikes={changeReviewLikes} isView={true}/>
             <div>
-                {thisReview.comments && thisReview.comments.map(comment => (
+                {review.comments && review.comments.map(comment => (
                     <React.Fragment>
                         <Card className='item'>
                         <Card.Header>author</Card.Header>
@@ -28,8 +56,5 @@ export default function ReviewView({}: Props): ReactElement {
             </div>
         </div>
     );
-    function changeReviewLikes(review: Review, likes: number) {
-        review.likes = likes;
-    }
 
 }
