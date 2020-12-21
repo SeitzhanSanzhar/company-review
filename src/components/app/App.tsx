@@ -29,42 +29,6 @@ const reviews: Review[] = [
         likes: 0,
         comments: ["agree", "so TRUE"],
         isLiked: false
-    },
-    {
-        companyName: "Kaspi",
-        author: "Adlet",
-        review: "best company in Kazakhstan",
-        id: 2,
-        likes: 0,
-        comments: ["comment 1", "comment 2", "comment 3"],
-        isLiked: false
-    },
-    {
-        companyName: "Amazon",
-        author: "Sanzhar",
-        review: "Bad work life balance low salary bad managers wanting to fire you",
-        id: 3,
-        likes: 0,
-        comments: ["Whyy?", "NOOOOOOOOOO"],
-        isLiked: false
-    },
-    {
-        companyName: "DAR",
-        author: "Adilkhan",
-        review: "not good bad work life balance low salary don't know why they write in Scala",
-        id: 4,
-        likes: 0,
-        comments: ["asdasd", "qweqweqwe"],
-        isLiked: false
-    },
-    {
-        companyName: "ORION",
-        author: "review by SANZHIK",
-        review: "ne prihodite suda",
-        id: 5,
-        likes: 0,
-        comments: ["pochemu??", "ne och companiya"],
-        isLiked: false
     }
 ];
 

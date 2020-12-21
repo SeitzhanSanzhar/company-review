@@ -15,16 +15,19 @@ export default function ReviewItem({review, changeReviewLikes, isView}: ReviewPr
     const [likes, setLikes] = useState(review.likes);
     const [isLiked, setIsLiked] = useState(review.isLiked);
     useEffect(() => {
-        changeReviewLikes(review, likes, isLiked);
-    }, [likes, isLiked]);
+        console.log(review);
+        // changeReviewLikes(review, likes, isLiked);
+    }, []);
 
     function clickLike() {
         setLikes(likes + (isLiked ? -1 : 1));
         setIsLiked(!isLiked);
-        // changeReviewLikes(review, likes, isLiked);
+        changeReviewLikes(review, likes, isLiked);
+
     }
 
     return(
+        <div>
         <Card className='text-left m-2'>
             <Card.Header as="h5">{review.companyName}</Card.Header>
             <Card.Body>
@@ -44,6 +47,7 @@ export default function ReviewItem({review, changeReviewLikes, isView}: ReviewPr
             </Card.Body>
             <div></div>
         </Card>
+        </div>
     );
 
 }
