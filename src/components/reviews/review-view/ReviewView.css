@@ -7,7 +7,7 @@
 .item {
     overflow-y: scroll;
     margin: 20px 20px 20px 20px;
-    border-width: 3px;
+    border-width: 1px;
     border-color: black;
     border-radius: 10px;
 }

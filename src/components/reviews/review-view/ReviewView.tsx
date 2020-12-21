@@ -10,8 +10,6 @@ type Props = {
 }
 
 export default function ReviewView({}: Props): ReactElement {
-    const [number, setNumber] = useState(6);
-    const [a, setA] = useState(0);
     const reviews = useContext<Review[]>(ReviewContext);
     const match = useRouteMatch<{id: string}>();
     const thisReview = reviews.filter(r => r.id === Number(match.params.id))[0];
@@ -19,15 +17,14 @@ export default function ReviewView({}: Props): ReactElement {
         <div>
             <ReviewItem review={thisReview} changeReviewLikes={changeReviewLikes} isView={true}/>
             <div>
-                {thisReview.comments && thisReview.comments.map(comment =>
-                <div><Card className='item'>
-                <Card.Header>author</Card.Header>
-                <Card.Body>
-                    {comment}
-                </Card.Body>
-                </Card>
-                </div>
-                )}
+                {thisReview.comments && thisReview.comments.map(comment => (
+                    <React.Fragment>
+                        <Card className='item'>
+                        <Card.Header>author</Card.Header>
+                        <Card.Body>comment</Card.Body>
+                        </Card>
+                    </React.Fragment>
+                ))}
             </div>
         </div>
     );
@@ -35,9 +32,4 @@ export default function ReviewView({}: Props): ReactElement {
         review.likes = likes;
     }
 
-    function addReview(review: Review) {
-        review.id = number;
-        reviews.push(review);
-        setNumber(number + 1);
-    }
 }
