@@ -5,7 +5,7 @@ import './Login.css';
 
 import axios from "../../api/axios";
 import {User} from "../../models/User";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import BusinessRoundedIcon from "@material-ui/core/SvgIcon/SvgIcon";
 import Nav from "react-bootstrap/Nav";
 
@@ -67,6 +67,7 @@ const Login = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const loginButton = useRef<HTMLButtonElement>(null);
   const buttonColor = useContext<string>(ColorContext);
+  // const history = useHistory();
   useEffect(() => {
     if (state.username.trim() && state.password.trim()) {
       dispatch({
@@ -89,13 +90,16 @@ const Login = () => {
           type: 'loginSuccess',
           payload: 'Login Successfully'
         });
-        alert ('success');
+        console.log("SUUUUCCCESSS!!!");
+        localStorage.setItem('logged', state.username);
+        // alert ('success');
       } else {
         dispatch({
           type: 'loginFailed',
           payload: 'Incorrect username or password'
         });
-        alert ('fail');
+        localStorage.setItem('logged', 'false');
+        // alert ('fail');
       }
     }).catch(function (error) {
       console.log(error);
@@ -140,9 +144,11 @@ const Login = () => {
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
       </Form>
-      <Link className="nav-link" to="/companies">
-      <button type='submit' ref = {loginButton} className={`btn btn-${buttonColor}`} onClick={handleLogin} disabled={true}>Login</button>
-      </Link>
+      <button type='submit' ref = {loginButton} className={`btn btn-${buttonColor}`} onClick={handleLogin} disabled={true}>
+        {/*<Link className="nav-link" to="/companies">*/}
+        Login
+        {/*</Link>*/}
+      </button>
     </form>
   );
 }

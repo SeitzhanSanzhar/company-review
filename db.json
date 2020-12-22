@@ -86,6 +86,12 @@
       "email": "admin@gmail.com",
       "password": "123123123",
       "id": 3
+    },
+    {
+      "username": "Sanzhar",
+      "email": "adilkhan.kozhakhmetov@gmail.com",
+      "password": "123123123",
+      "id": 4
     }
   ]
 }
