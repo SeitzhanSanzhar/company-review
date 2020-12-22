@@ -5,12 +5,12 @@
       "author": "Adilkhan",
       "review": "Bad work life balance low salary",
       "id": 1,
-      "likes": 12,
+      "likes": 18,
       "comments": [
         "agree",
         "so TRUE"
       ],
-      "isLiked": false
+      "isLiked": true
     },
     {
       "companyName": "Kaspi",
@@ -33,18 +33,20 @@
       "comments": [
         "Whyy?",
         "NOOOOOOOOOO"
-      ]
+      ],
+      "likes": 12,
+      "isLiked": true
     },
     {
       "companyName": "DAR",
       "author": "Adilkhan",
       "review": "not good bad work life balance low salary don't know why they write in Scala",
       "id": 4,
-      "likes": 11,
       "comments": [
         "asdasd",
         "qweqweqwe"
       ],
+      "likes": 11,
       "isLiked": false
     },
     {
@@ -71,9 +73,9 @@
       "id": 7,
       "companyName": "new 2 test",
       "review": "new 2 test",
-      "likes": 0,
+      "likes": 1,
       "author": "new 2 test",
-      "isLiked": false
+      "isLiked": true
     },
     {
       "id": 8,
