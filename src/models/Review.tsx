@@ -1,6 +1,6 @@
 export interface Review {
     id: number;
-    author: string;
+    author: string | null;
     companyName: string;
     review: string;
     likes: number;

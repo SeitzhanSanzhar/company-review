@@ -66,6 +66,14 @@
       "likes": 0,
       "author": "фыаыфва",
       "isLiked": false
+    },
+    {
+      "id": 7,
+      "companyName": "last test",
+      "review": "asdfasdfasdfasdf",
+      "likes": 0,
+      "author": "Sanzhar",
+      "isLiked": false
     }
   ],
   "users": [
