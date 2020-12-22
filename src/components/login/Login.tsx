@@ -97,12 +97,6 @@ const Login = () => {
       loginButton.current.disabled = state.isButtonDisabled;
   }, [state.isButtonDisabled])
 
-  const handleKeyPress = (event: React.KeyboardEvent) => {
-    if (event.keyCode === 13 || event.which === 13) {
-      state.isButtonDisabled || handleLogin();
-    }
-  };
-
   const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> =
     (event) => {
       dispatch({

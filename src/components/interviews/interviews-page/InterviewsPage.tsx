@@ -9,19 +9,11 @@ interface Props {
     
 }
 
-function useForceUpdate(){
-    const [value, setValue] = useState(0); // integer state
-    console.log(value);
-    return () => setValue(value => ++value); // update the state to force render
-}
-
 export default function InterviewsPage({}: Props): ReactElement {
     const [showDiscover, setShowDiscover] = useState(true);
 
     const discoverButtonRef = React.useRef<HTMLAnchorElement>(null);
     const addButtonRef = React.useRef<HTMLAnchorElement>(null);
-
-    const forceUpdate = useForceUpdate();
     
     function navigateToDiscoverTab() {
         if (discoverButtonRef.current !== null) {
@@ -46,7 +38,6 @@ export default function InterviewsPage({}: Props): ReactElement {
     function addInterview(interview: Interview) {
         interview.id = interviews.length + 1;
         interviews.push(interview);
-        forceUpdate();
         navigateToDiscoverTab();
     }
 

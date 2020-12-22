@@ -1,11 +1,10 @@
-import React, {ReactElement, useCallback, useContext, useEffect, useState} from "react";
+import React, { ReactElement, useCallback, useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { useRouteMatch } from "react-router";
-import ReviewContext from "../../../contexts/ReviewContext";
+import axios from "../../../api/axios";
 import { Review } from "../../../models/Review";
 import ReviewItem from "../review-item/ReviewItem";
 import './ReviewView.css';
-import axios from "../../../api/axios";
 type Props = {
 
 }

@@ -10,9 +10,6 @@ interface IState {
 }
 
 class CompanyListItem extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
-    super(props);
-  }
   render() {
     return (
       <>
