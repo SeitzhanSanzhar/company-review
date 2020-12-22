@@ -5,6 +5,9 @@ import './Login.css';
 
 import axios from "../../api/axios";
 import {User} from "../../models/User";
+import {Link} from "react-router-dom";
+import BusinessRoundedIcon from "@material-ui/core/SvgIcon/SvgIcon";
+import Nav from "react-bootstrap/Nav";
 
 type State = {
   username: string
@@ -137,7 +140,9 @@ const Login = () => {
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
       </Form>
+      <Link className="nav-link" to="/companies">
       <button type='submit' ref = {loginButton} className={`btn btn-${buttonColor}`} onClick={handleLogin} disabled={true}>Login</button>
+      </Link>
     </form>
   );
 }
