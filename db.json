@@ -92,6 +92,18 @@
       "email": "adilkhan.kozhakhmetov@gmail.com",
       "password": "123123123",
       "id": 4
+    },
+    {
+      "username": "adiletabs",
+      "email": "asd@df.com",
+      "password": "asdfasdf",
+      "id": 5
+    },
+    {
+      "username": "testuser",
+      "email": "testuser@gmail.com",
+      "password": "qwe123asd",
+      "id": 6
     }
   ]
 }

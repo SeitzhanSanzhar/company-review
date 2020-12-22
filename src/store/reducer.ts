@@ -1,5 +1,5 @@
-import * as actionTypes from "./action_types"
-import {CompanyAction, CompanyState} from "../models/Company";
+import { CompanyAction, CompanyState } from "../models/Company";
+import * as actionTypes from "./action_types";
 
 const initialState: CompanyState = {
   companies: [

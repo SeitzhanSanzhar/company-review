@@ -26,6 +26,7 @@ export default function Registration({addUser}: Props): ReactElement {
             .catch(function (error) {
                 console.log(error);
             });
+        window.location.href = 'http://localhost:3000/login';
     }
 
     return (

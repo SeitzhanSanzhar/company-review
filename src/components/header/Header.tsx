@@ -1,14 +1,13 @@
+import { Person } from "@material-ui/icons";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import BusinessRoundedIcon from "@material-ui/icons/BusinessRounded";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import ICompany from "../../models/Company";
-import {Person} from "@material-ui/icons";
 
 interface HeaderProps {
   filterCompany: (search_val:  string) => void
@@ -26,6 +25,7 @@ const HeaderLogged = (props: HeaderProps) => {
   function handleLogout() {
     localStorage.setItem('logged', 'false');
     setLogged('false');
+    window.location.href = 'http://localhost:3000/login';
   }
   return (
     <>

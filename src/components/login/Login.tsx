@@ -1,13 +1,10 @@
 import React, { useContext, useEffect, useReducer, useRef } from 'react';
 import Form from 'react-bootstrap/Form';
+import axios from "../../api/axios";
 import ColorContext from "../../contexts/ColorContext";
+import { User } from "../../models/User";
 import './Login.css';
 
-import axios from "../../api/axios";
-import {User} from "../../models/User";
-import {Link, useHistory} from "react-router-dom";
-import BusinessRoundedIcon from "@material-ui/core/SvgIcon/SvgIcon";
-import Nav from "react-bootstrap/Nav";
 
 type State = {
   username: string
@@ -90,16 +87,14 @@ const Login = () => {
           type: 'loginSuccess',
           payload: 'Login Successfully'
         });
-        console.log("SUUUUCCCESSS!!!");
         localStorage.setItem('logged', state.username);
-        // alert ('success');
+        window.location.href = 'http://localhost:3000/companies';
       } else {
         dispatch({
           type: 'loginFailed',
           payload: 'Incorrect username or password'
         });
         localStorage.setItem('logged', 'false');
-        // alert ('fail');
       }
     }).catch(function (error) {
       console.log(error);
