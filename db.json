@@ -5,12 +5,12 @@
       "author": "Adilkhan",
       "review": "Bad work life balance low salary",
       "id": 1,
-      "likes": 18,
+      "likes": 12,
       "comments": [
         "agree",
         "so TRUE"
       ],
-      "isLiked": true
+      "isLiked": false
     },
     {
       "companyName": "Kaspi",
@@ -33,20 +33,18 @@
       "comments": [
         "Whyy?",
         "NOOOOOOOOOO"
-      ],
-      "likes": 12,
-      "isLiked": true
+      ]
     },
     {
       "companyName": "DAR",
       "author": "Adilkhan",
       "review": "not good bad work life balance low salary don't know why they write in Scala",
       "id": 4,
+      "likes": 11,
       "comments": [
         "asdasd",
         "qweqweqwe"
       ],
-      "likes": 11,
       "isLiked": false
     },
     {
@@ -63,35 +61,31 @@
     },
     {
       "id": 6,
-      "companyName": "new test",
-      "review": "new test",
+      "companyName": "фывафыва",
+      "review": "фывафыва",
       "likes": 0,
-      "author": "new test",
+      "author": "фыаыфва",
       "isLiked": false
+    }
+  ],
+  "users": [
+    {
+      "username": "qwerqwer",
+      "email": "adilkhan.kozhakhmetov@gmail.com",
+      "password": "123qweasd",
+      "id": 1
     },
     {
-      "id": 7,
-      "companyName": "new 2 test",
-      "review": "new 2 test",
-      "likes": 1,
-      "author": "new 2 test",
-      "isLiked": true
+      "username": "qwerqwer",
+      "email": "qwerqwewr@gmail.com",
+      "password": "123123123",
+      "id": 2
     },
     {
-      "id": 8,
-      "companyName": "news 3 tet",
-      "review": "qwerqweadf",
-      "likes": 0,
-      "author": "neww 3 test",
-      "isLiked": false
-    },
-    {
-      "id": 9,
-      "companyName": "asdfasdfa",
-      "review": "adfadsfasdf",
-      "likes": 0,
-      "author": "asdfasdf",
-      "isLiked": false
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "123123123",
+      "id": 3
     }
   ]
 }

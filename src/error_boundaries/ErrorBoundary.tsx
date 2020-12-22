@@ -1,4 +1,5 @@
-import React, {ErrorInfo} from 'react';
+import React, { ErrorInfo } from 'react';
+import './ErrorBoundary.css';
 
 class IProps {
 }
@@ -17,13 +18,13 @@ class ErrorBoundary extends React.Component<IProps, IState> {
     return { hasError: true };
   }
 
-  componentDidCatch(error:Error, errorInfo: ErrorInfo) {
-    console.log('some error occured');
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.log('Something went wrong');
   }
 
   render() {
     if (this.state.hasError) {
-      return <h1>Что-то пошло не так.</h1>;
+      return <h1 className="error-message">Oops, something went wrong...</h1>;
     }
 
     return this.props.children;

@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext, useEffect } from 'react';
+import React, { ReactElement, useCallback, useContext, useEffect } from 'react';
 import UserContext from '../../../contexts/UserContext';
 import { Interview } from '../../../models/Interview';
 import './InterviewAdd.css';
@@ -16,16 +16,17 @@ export default function InterviewAdd({ addInterview }: Props): ReactElement {
         document.title = "Add an interview";
     }, [])
     
-    function handleSubmit() {
+
+    const handleSubmit = useCallback(() => {
         if (interview.topic.length >= 6 && interview.text.length >= 6) {
             addInterview(interview);
         } else {
             alert("Topic length and text length must me at least 6!")
         }
-    } 
+    }, []);
 
     return (
-        <div>
+        <React.Fragment>
             <h2>Add interview report</h2>
             <form className="cf-add">
                 <div className="half left cf">
@@ -38,6 +39,6 @@ export default function InterviewAdd({ addInterview }: Props): ReactElement {
                     <textarea className="interview-input" placeholder="Type your interview report here..." onChange={(e) => { interview.text = e.target.value} }></textarea>
                 </div>  
             </form>
-        </div>
+        </React.Fragment>
     )
 }

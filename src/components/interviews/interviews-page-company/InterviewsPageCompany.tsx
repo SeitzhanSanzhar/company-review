@@ -9,7 +9,7 @@ interface IProps {
 export default function InterviewsPageCompany(props: IProps)  {
 
   const companyInterviews = interviews.filter((companyInterivew) => {
-    return companyInterivew.companyName == props.companyName;
+    return companyInterivew.companyName === props.companyName;
   });
   return (<InterviewsList interviews={companyInterviews}/>);
 }

@@ -1,18 +1,16 @@
 import React from 'react';
-import getCompanyData from '../../../data/CompanyData';
+import { CardDeck } from "react-bootstrap";
+import companies from '../../../data/CompanyData';
 import WithLoggerHOC from '../../../hoc/withLoggerHOC';
-import CompanyData from "../../../models/Company";
+import { default as CompanyData } from '../../../models/Company';
 import CompanyListItem from "../company-list-item/CompanyListItem";
 import './CompanyList.css';
-import ErrorBoundary from '../error_boundary';
-import {CardDeck} from "react-bootstrap";
 
 interface IProps {}
 type IState = {
   rowSize: number,
   searchValue: string,
   company_data: CompanyData[]
-  selectedCompany: CompanyData
 }
 
 class CompanyList extends React.Component<IProps, IState> {
@@ -22,11 +20,9 @@ class CompanyList extends React.Component<IProps, IState> {
     this.state = {
       rowSize: 2,
       searchValue: '',
-      company_data: getCompanyData(),
-      selectedCompany: getCompanyData()[0]
+      company_data: companies,
     };
     this.handleChangeSearchValue = this.handleChangeSearchValue.bind(this);
-    this.setSelectedCompanyHandler = this.setSelectedCompanyHandler.bind(this);
   }
 
   handleChangeSearchValue(e: React.ChangeEvent<HTMLInputElement>) {
@@ -35,15 +31,10 @@ class CompanyList extends React.Component<IProps, IState> {
     }
   }
 
-  setSelectedCompanyHandler(_selectedCompany: CompanyData) {
-    this.setState({
-      selectedCompany: _selectedCompany
-    } as IState);
-  }
-
   render() {
     let cardDecksOf3: Array<Array<CompanyData>> = [], currentDeck: CompanyData[] = [];
     const WrappedClass = WithLoggerHOC(CompanyListItem);
+    
     const Jumbotron = React.memo((props: {}) =>
       <div className='jumbotron'>
         <div className="container">
@@ -52,17 +43,21 @@ class CompanyList extends React.Component<IProps, IState> {
         </div>
       </div>
     )
+    
     this.state.company_data.forEach((cd) => {
       currentDeck.push(cd);
+      if (cd.rating < 0) throw new Error("Rating can not be negative");
       if (currentDeck.length >= this.state.rowSize) {
         cardDecksOf3.push(currentDeck);
         currentDeck = [];
       }
     })
+
     if (currentDeck.length !== 0)
       cardDecksOf3.push(currentDeck);
+
     return (
-      <ErrorBoundary>
+      <React.Fragment>
         <Jumbotron/>
         <b><h4>Popular companies</h4></b>
         <div className='container'>
@@ -78,7 +73,7 @@ class CompanyList extends React.Component<IProps, IState> {
             })}
           </CardDeck>
         </div>
-      </ErrorBoundary>
+      </React.Fragment>
     )
   }
 }

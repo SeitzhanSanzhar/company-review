@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form';
 import ColorContext from "../../contexts/ColorContext";
 import './Login.css';
 
+import axios from "../../api/axios";
+import {User} from "../../models/User";
 
 type State = {
   username: string
@@ -77,31 +79,30 @@ const Login = () => {
   }, [state.username, state.password]);
 
   const handleLogin = () => {
-    if (state.username === 'admin' && state.password === '123qweasd') {
-      dispatch({
-        type: 'loginSuccess',
-        payload: 'Login Successfully'
-      });
-      alert ('success');
-    } else {
-      dispatch({
-        type: 'loginFailed',
-        payload: 'Incorrect username or password'
-      });
-      alert ('fail');
-    }
+    axios.get("/users").then(res => {
+      const users: User[] = res.data;
+      if (users.filter(user => (state.username === user.username && state.password === user.password)).length > 0) {
+        dispatch({
+          type: 'loginSuccess',
+          payload: 'Login Successfully'
+        });
+        alert ('success');
+      } else {
+        dispatch({
+          type: 'loginFailed',
+          payload: 'Incorrect username or password'
+        });
+        alert ('fail');
+      }
+    }).catch(function (error) {
+      console.log(error);
+    });
   };
 
   useEffect(() => {
     if (loginButton && loginButton.current)
       loginButton.current.disabled = state.isButtonDisabled;
   }, [state.isButtonDisabled])
-
-  const handleKeyPress = (event: React.KeyboardEvent) => {
-    if (event.keyCode === 13 || event.which === 13) {
-      state.isButtonDisabled || handleLogin();
-    }
-  };
 
   const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> =
     (event) => {

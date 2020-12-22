@@ -1,9 +1,9 @@
+import axios from 'axios';
 import React from "react";
-import getCompanyData from '../../../data/CompanyData';
+import companies from '../../../data/CompanyData';
 import CompanyData from "../../../models/Company";
 import InterviewsPageCompany from "../../interviews/interviews-page-company/InterviewsPageCompany";
 import './CompanyDetail.css';
-import axios from 'axios';
 
 
 interface IProps  extends React.Props<any>{
@@ -19,7 +19,7 @@ class CompanyDetail extends React.Component<IProps, IState>{
   constructor(props: IProps) {
     super(props);
     this.state = {
-      companyDatas: getCompanyData()
+      companyDatas: companies
     }
     axios.get('https://drive.google.com/file/d/1l8SVNCd92-MsfuJaRGdbsD7nExRBofd2/view?usp=sharing')
       .then((res) => {
