@@ -50,7 +50,7 @@ export default function InterviewsPage({}: Props): ReactElement {
 
     return (
         <div>
-            <div>
+            <React.Fragment>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
@@ -68,7 +68,7 @@ export default function InterviewsPage({}: Props): ReactElement {
                 </nav>
 
                 {showDiscover ? <InterviewsList interviews={interviewsToShow}/> : <InterviewAdd addInterview={addInterview}/>}
-            </div>
+            </React.Fragment>
         </div>
     )
 }

@@ -25,7 +25,7 @@ export default function InterviewAdd({ addInterview }: Props): ReactElement {
     } 
 
     return (
-        <div>
+        <React.Fragment>
             <h2>Add interview report</h2>
             <form className="cf-add">
                 <div className="half left cf">
@@ -38,6 +38,6 @@ export default function InterviewAdd({ addInterview }: Props): ReactElement {
                     <textarea className="interview-input" placeholder="Type your interview report here..." onChange={(e) => { interview.text = e.target.value} }></textarea>
                 </div>  
             </form>
-        </div>
+        </React.Fragment>
     )
 }
