@@ -1,6 +1,6 @@
 import { Interview } from "../models/Interview";
 
-const interviews: Interview[] = [
+let interviews: Interview[] = [
   {
     id: 1,
     topic: "Road to Google",
