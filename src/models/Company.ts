@@ -1,4 +1,3 @@
-import {IconProps} from "@material-ui/core";
 
 export default interface ICompany {
   id: number,

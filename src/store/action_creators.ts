@@ -1,6 +1,5 @@
-import * as actionTypes from "./action_types"
-import Company, {CompanyAction, DispatchType} from "../models/Company";
-import ICompany from "../models/Company";
+import { CompanyAction, DispatchType } from "../models/Company";
+import * as actionTypes from "./action_types";
 
 export function filterCompany(search_val: string) {
   const action: CompanyAction = {

@@ -1,11 +1,10 @@
 import React from 'react';
 import { CardDeck } from "react-bootstrap";
-import companies from '../../../data/CompanyData';
+import { shallowEqual, useSelector } from "react-redux";
 import WithLoggerHOC from '../../../hoc/withLoggerHOC';
-import ICompany, {CompanyState, default as CompanyData} from '../../../models/Company';
+import ICompany, { CompanyState, default as CompanyData } from '../../../models/Company';
 import CompanyListItem from "../company-list-item/CompanyListItem";
 import './CompanyList.css';
-import {shallowEqual, useSelector} from "react-redux";
 
 
 const CompanyList: React.FC = () => {

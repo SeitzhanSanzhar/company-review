@@ -4,7 +4,6 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { Review } from "../../../models/Review";
 import './ReviewItem.css';
-import {Simulate} from "react-dom/test-utils";
 
 type ReviewProps = {
     review: Review;
