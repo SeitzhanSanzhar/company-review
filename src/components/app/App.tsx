@@ -32,7 +32,6 @@ const reviews: Review[] = [
     }
 ];
 
-
 function App() {
     function onRenderCallback(
         id: string, // проп "id" из дерева компонента Profiler, для которого было зафиксировано изменение
@@ -56,32 +55,32 @@ function App() {
     }
   return (
       <div className="App">
-          <Profiler id="Panel" onRender={onRenderCallback}>
-          <Header/>
-          <Route path="/register">
-              <Registration addUser={addUser}/>
-          </Route>
-          <UserContext.Provider value={'Alikhan'}>
-          <ReviewContext.Provider value={reviews}>
-          <ColorContext.Provider value = {'danger'}>
-              <React.Suspense fallback={<div>Loading...</div>}>
-              <Switch>
-                  <Route exact path='/interviews' component={InterviewsPage} />
-                  <Route path='/interviews/:id/' component={InterviewDetails} />
-                  <Route exact path='/login' component={Login} />
-                  <Route exact path='/' component={Login} />
-                  <Route exact path='/reviews/' component={ReviewList} />
-                  <Route path='/reviews/:id/' component={ReviewView} />
-                  <Route path='/interviews_company/:companyName/' component={InterviewsPageCompany} />
-                  <Route path='/reviews/:id/' component={ReviewView} />
-                  <Route path='/company-detail/:id/' component={CompanyDetail} />
-                  <Route path='/companies' component={CompanyList} />
-              </Switch>
-              </React.Suspense>
-          </ColorContext.Provider>
-          </ReviewContext.Provider>
-          </UserContext.Provider>
-          </Profiler>
+        <Profiler id="Panel" onRender={onRenderCallback}>
+            <Header/>
+            <Route path="/register">
+                <Registration addUser={addUser}/>
+            </Route>
+            <UserContext.Provider value={'Alikhan'}>
+            <ReviewContext.Provider value={reviews}>
+            <ColorContext.Provider value = {'danger'}>
+                <React.Suspense fallback={<div>Loading...</div>}>
+                <Switch>
+                    <Route exact path='/interviews' component={InterviewsPage} />
+                    <Route path='/interviews/:id/' component={InterviewDetails} />
+                    <Route exact path='/login' component={Login} />
+                    <Route exact path='/' component={Login} />
+                    <Route exact path='/reviews/' component={ReviewList} />
+                    <Route path='/reviews/:id/' component={ReviewView} />
+                    <Route path='/interviews_company/:companyName/' component={InterviewsPageCompany} />
+                    <Route path='/reviews/:id/' component={ReviewView} />
+                    <Route path='/company-detail/:id/' component={CompanyDetail} />
+                    <Route path='/companies' component={CompanyList} />
+                </Switch>
+                </React.Suspense>
+            </ColorContext.Provider>
+            </ReviewContext.Provider>
+            </UserContext.Provider>
+        </Profiler>
       </div>
   );
   function addUser(user: User) {

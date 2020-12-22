@@ -2,9 +2,8 @@ import React from 'react';
 import { CardDeck } from "react-bootstrap";
 import companies from '../../../data/CompanyData';
 import WithLoggerHOC from '../../../hoc/withLoggerHOC';
-import CompanyData from "../../../models/Company";
+import { default as CompanyData } from '../../../models/Company';
 import CompanyListItem from "../company-list-item/CompanyListItem";
-import ErrorBoundary from '../error_boundary';
 import './CompanyList.css';
 
 interface IProps {}
@@ -44,6 +43,7 @@ class CompanyList extends React.Component<IProps, IState> {
   render() {
     let cardDecksOf3: Array<Array<CompanyData>> = [], currentDeck: CompanyData[] = [];
     const WrappedClass = WithLoggerHOC(CompanyListItem);
+    
     const Jumbotron = React.memo((props: {}) =>
       <div className='jumbotron'>
         <div className="container">
@@ -52,17 +52,21 @@ class CompanyList extends React.Component<IProps, IState> {
         </div>
       </div>
     )
+    
     this.state.company_data.forEach((cd) => {
       currentDeck.push(cd);
+      if (cd.rating < 0) throw new Error("Rating can not be negative");
       if (currentDeck.length >= this.state.rowSize) {
         cardDecksOf3.push(currentDeck);
         currentDeck = [];
       }
     })
+
     if (currentDeck.length !== 0)
       cardDecksOf3.push(currentDeck);
+
     return (
-      <ErrorBoundary>
+      <React.Fragment>
         <Jumbotron/>
         <b><h4>Popular companies</h4></b>
         <div className='container'>
@@ -78,7 +82,7 @@ class CompanyList extends React.Component<IProps, IState> {
             })}
           </CardDeck>
         </div>
-      </ErrorBoundary>
+      </React.Fragment>
     )
   }
 }
