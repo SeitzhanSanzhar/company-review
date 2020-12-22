@@ -1,17 +1,16 @@
-import React, {Dispatch, Profiler} from 'react';
+import React, { Dispatch, Profiler } from 'react';
+import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router";
 import ColorContext from "../../contexts/ColorContext";
 import ReviewContext from "../../contexts/ReviewContext";
 import UserContext from '../../contexts/UserContext';
 import { Review } from "../../models/Review";
 import { User } from "../../models/User";
+import { filterCompany } from "../../store/action_creators";
 import Header from "../header/Header";
 import InterviewsPageCompany from '../interviews/interviews-page-company/InterviewsPageCompany';
 import Registration from "../register/Register";
 import './App.css';
-import {useDispatch} from "react-redux";
-import ICompany from "../../models/Company";
-import {filterCompany} from "../../store/action_creators";
 
 const CompanyDetail = React.lazy(() => import('../companies/company-detail/CompanyDetail'));
 const CompanyList = React.lazy(() => import('../companies/company-list/CompanyList'));
