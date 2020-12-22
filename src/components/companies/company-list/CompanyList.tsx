@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardDeck } from "react-bootstrap";
-import getCompanyData from '../../../data/CompanyData';
+import companies from '../../../data/CompanyData';
 import WithLoggerHOC from '../../../hoc/withLoggerHOC';
 import CompanyData from "../../../models/Company";
 import CompanyListItem from "../company-list-item/CompanyListItem";
@@ -12,7 +12,7 @@ type IState = {
   rowSize: number,
   searchValue: string,
   company_data: CompanyData[]
-  selectedCompany: CompanyData
+  // selectedCompany: CompanyData
 }
 
 class CompanyList extends React.Component<IProps, IState> {
@@ -22,11 +22,11 @@ class CompanyList extends React.Component<IProps, IState> {
     this.state = {
       rowSize: 2,
       searchValue: '',
-      company_data: getCompanyData(),
-      selectedCompany: getCompanyData()[0]
+      company_data: companies,
+      // selectedCompany: getCompanyData()[0]
     };
     this.handleChangeSearchValue = this.handleChangeSearchValue.bind(this);
-    this.setSelectedCompanyHandler = this.setSelectedCompanyHandler.bind(this);
+    // this.setSelectedCompanyHandler = this.setSelectedCompanyHandler.bind(this);
   }
 
   handleChangeSearchValue(e: React.ChangeEvent<HTMLInputElement>) {
@@ -35,11 +35,11 @@ class CompanyList extends React.Component<IProps, IState> {
     }
   }
 
-  setSelectedCompanyHandler(_selectedCompany: CompanyData) {
-    this.setState({
-      selectedCompany: _selectedCompany
-    } as IState);
-  }
+  // setSelectedCompanyHandler(_selectedCompany: CompanyData) {
+  //   this.setState({
+  //     selectedCompany: _selectedCompany
+  //   } as IState);
+  // }
 
   render() {
     let cardDecksOf3: Array<Array<CompanyData>> = [], currentDeck: CompanyData[] = [];
