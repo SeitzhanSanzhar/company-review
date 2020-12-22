@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext, useEffect } from 'react';
+import React, { ReactElement, useCallback, useContext, useEffect } from 'react';
 import UserContext from '../../../contexts/UserContext';
 import { Interview } from '../../../models/Interview';
 import './InterviewAdd.css';
@@ -16,13 +16,14 @@ export default function InterviewAdd({ addInterview }: Props): ReactElement {
         document.title = "Add an interview";
     }, [])
     
-    function handleSubmit() {
+
+    const handleSubmit = useCallback(() => {
         if (interview.topic.length >= 6 && interview.text.length >= 6) {
             addInterview(interview);
         } else {
             alert("Topic length and text length must me at least 6!")
         }
-    } 
+    }, []);
 
     return (
         <React.Fragment>

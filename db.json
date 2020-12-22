@@ -61,34 +61,10 @@
     },
     {
       "id": 6,
-      "companyName": "new test",
-      "review": "new test",
+      "companyName": "фывафыва",
+      "review": "фывафыва",
       "likes": 0,
-      "author": "new test",
-      "isLiked": false
-    },
-    {
-      "id": 7,
-      "companyName": "new 2 test",
-      "review": "new 2 test",
-      "likes": 0,
-      "author": "new 2 test",
-      "isLiked": false
-    },
-    {
-      "id": 8,
-      "companyName": "news 3 tet",
-      "review": "qwerqweadf",
-      "likes": 0,
-      "author": "neww 3 test",
-      "isLiked": false
-    },
-    {
-      "id": 9,
-      "companyName": "asdfasdfa",
-      "review": "adfadsfasdf",
-      "likes": 0,
-      "author": "asdfasdf",
+      "author": "фыаыфва",
       "isLiked": false
     }
   ]
