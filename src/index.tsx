@@ -7,11 +7,24 @@ import ErrorBoundary from "./error_boundaries/ErrorBoundary";
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
+
+import reducer from "./store/reducer"
+import { createStore, applyMiddleware, Store } from "redux"
+import { Provider } from "react-redux"
+import thunk from "redux-thunk"
+import {CompanyAction, CompanyState, DispatchType} from "./models/Company";
+
+const store: Store<CompanyState, CompanyAction> & {
+  dispatch: DispatchType
+} = createStore(reducer, applyMiddleware(thunk))
+
 ReactDOM.render(
   <BrowserRouter>
   <React.StrictMode>
     <ErrorBoundary>
-    <App/>
+      <Provider store={store}>
+        <App/>
+      </Provider>
     </ErrorBoundary>
   </React.StrictMode>
   </BrowserRouter>,

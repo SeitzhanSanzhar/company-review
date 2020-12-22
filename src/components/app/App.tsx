@@ -1,4 +1,4 @@
-import React, { Profiler } from 'react';
+import React, {Dispatch, Profiler} from 'react';
 import { Route, Switch } from "react-router";
 import ColorContext from "../../contexts/ColorContext";
 import ReviewContext from "../../contexts/ReviewContext";
@@ -9,6 +9,9 @@ import Header from "../header/Header";
 import InterviewsPageCompany from '../interviews/interviews-page-company/InterviewsPageCompany';
 import Registration from "../register/Register";
 import './App.css';
+import {useDispatch} from "react-redux";
+import ICompany from "../../models/Company";
+import {filterCompany} from "../../store/action_creators";
 
 const CompanyDetail = React.lazy(() => import('../companies/company-detail/CompanyDetail'));
 const CompanyList = React.lazy(() => import('../companies/company-list/CompanyList'));
@@ -53,10 +56,19 @@ function App() {
         ].join("\n");
         console.log(performanceData);
     }
+
+
+    const dispatch: Dispatch<any> = useDispatch()
+
+    const filterCompanies = React.useCallback(
+      (search_val: string) => dispatch(filterCompany(search_val)),
+      [dispatch]
+    )
+
   return (
       <div className="App">
         <Profiler id="Panel" onRender={onRenderCallback}>
-            <Header/>
+            <Header filterCompany={filterCompanies}/>
             <Route path="/register">
                 <Registration addUser={addUser}/>
             </Route>

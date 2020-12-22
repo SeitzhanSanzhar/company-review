@@ -1,0 +1,1 @@
+export const FILTER_COMPANY = "FILTER_COMPANY";
