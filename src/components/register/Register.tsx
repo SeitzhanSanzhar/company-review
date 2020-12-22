@@ -3,6 +3,7 @@ import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { User } from "../../models/User";
 import './Register.css';
+import axios from "../../api/axios";
 
 
 
@@ -19,7 +20,13 @@ export default function Registration({addUser}: Props): ReactElement {
 
     function handleSubmit(event: FormEvent<HTMLElement>):void {
         const user: User = {username: username, email: email, password:password};
-        addUser(user);
+        axios.post("/users", user)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     return (

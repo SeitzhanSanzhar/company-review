@@ -67,5 +67,25 @@
       "author": "фыаыфва",
       "isLiked": false
     }
+  ],
+  "users": [
+    {
+      "username": "qwerqwer",
+      "email": "adilkhan.kozhakhmetov@gmail.com",
+      "password": "123qweasd",
+      "id": 1
+    },
+    {
+      "username": "qwerqwer",
+      "email": "qwerqwewr@gmail.com",
+      "password": "123123123",
+      "id": 2
+    },
+    {
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "123123123",
+      "id": 3
+    }
   ]
 }

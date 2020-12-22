@@ -54,7 +54,7 @@ function App() {
             `commitTime: ${commitTime}`,
             `interactions: ${JSON.stringify([...interactions])}`
         ].join("\n");
-        console.log(performanceData);
+        // console.log(performanceData);
     }
 
 
