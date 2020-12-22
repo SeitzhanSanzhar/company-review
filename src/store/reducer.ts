@@ -19,7 +19,7 @@ const reducer = (
 ): CompanyState => {
   switch (action.type) {
     case actionTypes.FILTER_COMPANY:
-      let new_companies = state.companies.filter((company) => {return company.name.indexOf(action.search_val) !== -1});
+      let new_companies = initialState.companies.filter((company) => {return company.name.indexOf(action.search_val) !== -1});
       return {
         ...state,
         companies: new_companies
