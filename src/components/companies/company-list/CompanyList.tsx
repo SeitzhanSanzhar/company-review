@@ -11,7 +11,6 @@ type IState = {
   rowSize: number,
   searchValue: string,
   company_data: CompanyData[]
-  // selectedCompany: CompanyData
 }
 
 class CompanyList extends React.Component<IProps, IState> {
@@ -22,10 +21,8 @@ class CompanyList extends React.Component<IProps, IState> {
       rowSize: 2,
       searchValue: '',
       company_data: companies,
-      // selectedCompany: getCompanyData()[0]
     };
     this.handleChangeSearchValue = this.handleChangeSearchValue.bind(this);
-    // this.setSelectedCompanyHandler = this.setSelectedCompanyHandler.bind(this);
   }
 
   handleChangeSearchValue(e: React.ChangeEvent<HTMLInputElement>) {
@@ -33,12 +30,6 @@ class CompanyList extends React.Component<IProps, IState> {
       this.setState({searchValue: e.target.value});
     }
   }
-
-  // setSelectedCompanyHandler(_selectedCompany: CompanyData) {
-  //   this.setState({
-  //     selectedCompany: _selectedCompany
-  //   } as IState);
-  // }
 
   render() {
     let cardDecksOf3: Array<Array<CompanyData>> = [], currentDeck: CompanyData[] = [];
